@@ -14,7 +14,7 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
     const navigation = useNavigation();
 
     function handleGoBackToHome() {
-        navigation.navigate('OrphanagesMap');
+        navigation.navigate('Maptruck');
     }
 
     return (

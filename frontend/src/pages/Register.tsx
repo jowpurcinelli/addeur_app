@@ -13,7 +13,7 @@ interface ProductDetails {
   productsize: {
     height: Number
     width: Number
-    depth: Number
+    depth: number
   }
   packagestyle: String
   productvalue: String
