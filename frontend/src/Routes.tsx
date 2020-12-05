@@ -13,13 +13,12 @@ import Order from './pages/Order';
 
 const Tab = createStackNavigator();
 
-const { Navigator, Screen } = createStackNavigator();
 
 const Routes: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
 
-      <Tab.Screen name="Home" component={Maptruck} />
+      <Tab.Screen name="Home" component={Homepage} />
       
       <Tab.Screen 
         name="Order" 
