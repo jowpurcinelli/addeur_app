@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from './components/Header';
 
-import Maptruck from './pages/Maptruck';
+import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Order from './pages/Order';
 
@@ -19,9 +19,9 @@ const Routes: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
 
-      <Screen name="Home" component={Maptruck} />
+      <Tab.Screen name="Home" component={Maptruck} />
       
-      <Screen 
+      <Tab.Screen 
         name="Order" 
         component={Order} 
         options={{
@@ -30,7 +30,7 @@ const Routes: React.FC = () => {
           }}
         />
 
-      <Screen 
+      <Tab.Screen 
         name="Myinfo" 
         component={Myinfo}
         options={{
@@ -39,7 +39,7 @@ const Routes: React.FC = () => {
         }}
      />
 
-      <Screen 
+      <Tab.Screen 
         name="OrphanageData" 
         component={OrphanageData}
         options={{
