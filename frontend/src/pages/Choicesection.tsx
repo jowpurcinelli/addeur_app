@@ -10,6 +10,11 @@ interface Driver {
 
 }
 
+interface Customer {
+  id: number;
+  name: string;
+}
+
 const Choicesection = () => {
   const navigation = useNavigation();
 
@@ -30,6 +35,7 @@ const Choicesection = () => {
           style={{ width:450, height:350 }}
           source={require("../../../images/Logo.svg")}
         />
+        <
         <Image
          style={{ width:450, height:350 }}
           source={require("../../../images/Logo.svg")}
@@ -52,4 +58,6 @@ const styles = StyleSheet.create({
     color: '#FFF',
   }
 })
+
+export default Choicesection;
 
