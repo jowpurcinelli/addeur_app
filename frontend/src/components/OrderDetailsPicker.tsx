@@ -1,7 +1,7 @@
 import React from 'react';
 import RNPickerSelect from '@expo/react-native-picker-select';
 
-export const OrderDetailsPicker = (name, ) => {
+export const OrderDetailsPicker = ( ) => {
     return (
         <RNPickerSelect
             onValueChange={(value) => console.log(value)}

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect from 'react-native-picker/picker';
 
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';

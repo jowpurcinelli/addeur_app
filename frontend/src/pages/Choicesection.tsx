@@ -35,9 +35,9 @@ const Choicesection = () => {
           style={{ width:450, height:350 }}
           source={require("../../../images/Logo.svg")}
         />
-        <
+        
         <Image
-         style={{ width:450, height:350 }}
+          style={{ width:450, height:350 }}
           source={require("../../../images/Logo.svg")}
         />
       
