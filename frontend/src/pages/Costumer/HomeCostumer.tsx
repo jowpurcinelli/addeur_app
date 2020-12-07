@@ -18,7 +18,7 @@ interface Carriers{
 
 
 
-export default function Homepage() {
+const HomeCostumer = () => {
   const navigation = useNavigation();
 
   const [carriers, setCarriers] = useState<Carriers[]>([]);
@@ -38,15 +38,19 @@ export default function Homepage() {
     navigation.navigate('Orderdetails');
   }
 
+
+
   return (
     <View style={styles.container}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={{
-          latitude: -34.913707,
-          longitude: -56.170754,
-          latitudeDelta: 0.018,
-          longitudeDelta: 0.018
-        }}
-      >
+          latitude: 0,
+          longitude:0 ,
+          latitudeDelta: 0,
+          longitudeDelta: 0
+        }}/>
+    </View>
+  )}
+      

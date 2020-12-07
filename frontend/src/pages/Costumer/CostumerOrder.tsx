@@ -13,6 +13,7 @@ import { TextInputMask } from 'react-native-masked-text';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker/picker';
 
+import {CheckBox} from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 
@@ -41,12 +42,12 @@ async function handleCreateOrder() {
 
 
 
-  navigation.navigate('OrphanagesMap');
+  navigation.navigate('CostumerMap');
 }
 
 
 
-const Order = () => {
+const CostumerOrder = () => {
     const [recipient_name, setRecipientName] = useState('');
     const [recipient_contact, setRecipientContact] = useState('');
 
@@ -152,8 +153,10 @@ const Order = () => {
         />
       </View>
 
+      <CheckBox />
+
       <RectButton style={styles.nextButton} onPress={handleCreateOrphanage}>
-        <Text style={styles.nextButtonText}>Registrar</Text>
+        <Text style={styles.nextButtonText}>Order Now</Text>
       </RectButton>
     </ScrollView>
   )
@@ -244,3 +247,5 @@ const styles = StyleSheet.create({
   }
 }
     )
+
+export default CostumerOrder;
