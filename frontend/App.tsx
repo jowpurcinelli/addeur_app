@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-import CostumerOrder from './src/pages/Costumer/CostumerOrder'
+import Welcome from './src/pages/Welcome';
 
 import OrderDetailsButton from './src/components/OrderDetailsButton';
 import Routes from './src/Routes';
@@ -11,7 +11,7 @@ import Routes from './src/Routes';
 
 export default function App() {
   return (
-    <CostumerOrder />
+    <Welcome />
   );
 }
 
