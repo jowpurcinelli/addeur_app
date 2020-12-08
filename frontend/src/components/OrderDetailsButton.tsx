@@ -24,26 +24,29 @@ const OrderDetailsButton = () => {
   const [buttonValue, setButtonValue] = useState<Options>();
 
   // const [buttonTitle, setButtonTitle] = useState('');
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(undefined);
   // const [buttonValue, setButtonValue] = useState();
-  const toggleSwitch = (value) => {
-    //To handle switch toggle
-    setIsEnabled(value);
-    //State changes according to switch
-  };
   const options = [
     { label: '', value: '' },
   ];
+  
+  const toggleSwitch = (value) => {
+    //To handle switch toggle
+    setIsEnabled(setButtonValue)
+    
+    //State changes according to switch
+  };
+
 
   return (
       <View style={styles.container}>
         <Switch
           thumbColor="#ffffff" 
           trackColor={{ false: '#ccc', true: '#39CC83' }}
-          value={}
-          onValueChange={}
+          value={undefined}
+          onValueChange={toggleSwitch}
           style={styles.switch}
-          options={buttonValue}
+          options={setButtonValue}
           textColor={"#7C7C7C"}
           onPress={toggleSwitch}
           selectedTextContainerStyle={styles.title} 

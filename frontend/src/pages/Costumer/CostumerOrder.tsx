@@ -141,7 +141,8 @@ const CostumerOrder = () => {
 
 
       <CheckBox />
-
+      <OrderDetailsButton 
+        />
       
     </ScrollView>
   )
