@@ -11,25 +11,33 @@ import {
 } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import RNPickerSelect from 'react-native-picker/picker';
 
-import {CheckBox} from '../../components/CheckBox';
+import useSelectionChange from '../../hooks/useSelectionChange';
+
+import OrderDetailsButton from '../../components/OrderDetailsButton';
+import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 
+
+
+// Use this for connecting button title to api data dinamically 
+
+// useEffect(() => {
+//   api.post(`/buttontitle/option/${id}`).then(({ data }) => {
+//     setButtonTitle(data)
+//   })
+// }, [id])
+
+
+const DetailsButton = OrderDetailsButton
 
 const route = useRoute();
 const navigation = useNavigation();
 
 interface Product{
-    product_category: String,
-    product_type: String,
-    product_weight: String
-    product_size: {
-      Height: Number,
-      Width: Number,
-      Depth: Number,
-    }
+    label: String,
+    value: String,
 
 }
 
@@ -126,38 +134,15 @@ const CostumerOrder = () => {
 
 
 
-      <Text style={styles.title}>Visitación</Text>
 
-      <Text style={styles.label}>Instrucciones</Text>
-      <TextInput
-        style={[styles.input, { height: 110 }]}
-        multiline
-        value={instructions}
-        onChangeText={setInstructions}
-      />
 
-      <Text style={styles.label}>Horario de visitación</Text>
-      <TextInput
-        style={styles.input}
-        value={opening_hours}
-        onChangeText={setOpeningHours}
-      />
 
-        <View style={styles.switchContainer}>
-        <Text style={styles.label}>Abierto el fin de semana?</Text>
-        <Switch 
-          thumbColor="#fff" 
-          trackColor={{ false: '#ccc', true: '#39CC83' }}
-          value={open_on_weekends}
-          onValueChange={setOpenOnWeekends}
-        />
-      </View>
+
+
 
       <CheckBox />
 
-      <RectButton style={styles.nextButton} onPress={handleCreateOrphanage}>
-        <Text style={styles.nextButtonText}>Order Now</Text>
-      </RectButton>
+      
     </ScrollView>
   )
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import OrderDetailsButton from './src/components/OrderDetailsButton';
 import Routes from './src/Routes';
+
+const Button = OrderDetailsButton.call(Option)
 
 export default function App() {
   return (

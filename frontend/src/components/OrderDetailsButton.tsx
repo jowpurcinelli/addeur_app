@@ -2,18 +2,26 @@ import React, {useState} from 'react';
 import {View, Switch, StyleSheet, TouchableOpacity} from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons";
 
+
 import SwitchSelector from "react-native-switch-selector";
 
 
+// useEffect(() => {
+//   api.post(`/buttontitle/option/${id}`).then(({ data }) => {
+//     setButtonTitle(data)
+//   })
+// }, [id])
 
-interface options {
-  label: String,
-  value: String
-
-}
 
 const OrderDetailsButton = () => {
 
+  interface Options {
+    label: String,
+    value: String
+   
+  }
+
+  const [buttonValue, setButtonValue] = useState<Options>();
 
   // const [buttonTitle, setButtonTitle] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
@@ -29,15 +37,18 @@ const OrderDetailsButton = () => {
 
   return (
       <View style={styles.container}>
-        <SwitchSelector
+        <Switch
+          thumbColor="#ffffff" 
+          trackColor={{ false: '#ccc', true: '#39CC83' }}
+          value={}
+          onValueChange={}
           style={styles.switch}
-          options={options}
+          options={buttonValue}
           textColor={"#7C7C7C"}
           onPress={toggleSwitch}
           selectedTextContainerStyle={styles.title} 
           selectedColor={"#66CC7D"}
           buttonColor={"#E5E7E8"}
-
     />
       </View>
     );
@@ -66,3 +77,6 @@ const OrderDetailsButton = () => {
 });
 
 export default OrderDetailsButton;
+
+
+
