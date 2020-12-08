@@ -2,18 +2,11 @@ import React from 'react';
 //import Logo from '../../../images';
 import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+
+
 import api from '../services/api';
 
-interface Driver {
-  id: number;
-  name: string;
-
-}
-
-interface Customer {
-  id: number;
-  name: string;
-}
+import Container from './Welcome'
 
 const Choicesection = () => {
   const navigation = useNavigation();
@@ -25,7 +18,7 @@ const Choicesection = () => {
 
   
   return(
-    <View>
+    <Container style={styles.container}>
       <TouchableOpacity 
         onPress={
 

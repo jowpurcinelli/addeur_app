@@ -4654,6 +4654,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-advanced-forms@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-advanced-forms/-/react-native-advanced-forms-1.1.6.tgz#573a2e69cc3f3e0ce1667ab70390d4605d18da48"
+  integrity sha512-T8ysR+7agkBGnZmjMD1+b1x26an/3FIGs2bJ8qXWs2ZMEhuNkiB59d5NnZuWEhnD/w63k9jo8XyWhUlYS3EoVg==
+
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.7.0.tgz#0ef74a5ba836832e497dc49eb1ce58baa6c617e5"
@@ -5349,6 +5354,11 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+styled-components-native@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/styled-components-native/-/styled-components-native-1.0.2.tgz#4003997ea7b0db74c034fe645d7d26696e83cf59"
+  integrity sha512-0R0jeMcRqFsrwYNz2BNbrMvTaneKGhmrvKeuc1lFlvzXnf6olL9/TqbxKtfJSzqDhS8+Lw9r9+O8stqgkfDxlg==
 
 sudo-prompt@^9.0.0:
   version "9.2.1"
