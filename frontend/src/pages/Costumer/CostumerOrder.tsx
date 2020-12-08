@@ -10,10 +10,8 @@ import {
   Image
 } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
-import { useNavigation, useRoute } from '@react-navigation/native';
 
-import useSelectionChange from '../../hooks/useSelectionChange';
-
+import AppButton from '../../components/Buttons';
 import OrderDetailsButton from '../../components/OrderDetailsButton';
 import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
@@ -30,10 +28,10 @@ import { Feather } from '@expo/vector-icons';
 // }, [id])
 
 
-const DetailsButton = OrderDetailsButton
+// const DetailsButton = OrderDetailsButton
 
-const route = useRoute();
-const navigation = useNavigation();
+// const route = useRoute();
+// const navigation = useNavigation();
 
 interface Product{
     label: String,
@@ -43,15 +41,10 @@ interface Product{
 
 
 //Gonna be using Huawei Cloud Services for Database
-async function handleCreateOrder() {
+// async function handleCreateOrder() {
 
-
-  const data = new FormData();
-
-
-
-  navigation.navigate('CostumerMap');
-}
+//   navigation.navigate('CostumerMap');
+// }
 
 
 
@@ -73,13 +66,13 @@ const CostumerOrder = () => {
     return (
       <ScrollView style={styles.container} contentContainerStyle={{ padding: 24 }}>
 
-        <Text style={styles.title}>Recipient Name</Text>
+        <Text style={styles.formtitlecontact}>Recipient Name</Text>
             <TextInput 
                 style={styles.input}
                 value={recipient_name}
                 onChangeText={setRecipientName}
             />
-        <Text style={styles.title}>Contact</Text>
+        <Text style={styles.formtitlecontact}>Contact</Text>
             <TextInputMask 
                 type={'cel-phone'}
                 style={styles.input}
@@ -88,8 +81,8 @@ const CostumerOrder = () => {
             />
 
 
-
-        <Text style={styles.title}>Product Details</Text>
+        <View style={styles.sectiontitle}>
+        <Text style={styles.sectiontitle}>Product Details</Text>
 
         <Text style={styles.label}>Product category</Text>
             <TextInput
@@ -100,7 +93,7 @@ const CostumerOrder = () => {
 
         <Text style={styles.label}>Product Type</Text>
             <TextInput
-                style={[styles.input, { height: 110 }]}
+                style={styles.input}
                 value={product_type}
                 onChangeText={setProductType}
             />
@@ -116,7 +109,18 @@ const CostumerOrder = () => {
                 style={styles.input}
                 value={product_size}
                 onChangeText={setProductSize}
-      />
+            />
+            <TextInput
+                style={styles.input}
+                value={product_size}
+                onChangeText={setProductSize}
+            />
+            <TextInput
+              
+              style={styles.input}
+              value={product_size}
+              onChangeText={setProductSize}
+            />
         <Text style={styles.label}>Package Style</Text>
             <TextInput
                 style={styles.input}
@@ -129,6 +133,15 @@ const CostumerOrder = () => {
                 value={product_value}
                 onChangeText={setProductValue}
       />
+      </View>
+
+      <Text style={styles.section} />
+      <AppButton 
+        title={'7.6 miters'}
+      />
+      <AppButton 
+        title={'Platform'}
+      />
 
 
 
@@ -138,11 +151,7 @@ const CostumerOrder = () => {
 
 
 
-
-
-      <CheckBox />
-      <OrderDetailsButton 
-        />
+        
       
     </ScrollView>
   )
@@ -150,23 +159,61 @@ const CostumerOrder = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#c5c5c5',
     flex: 1,
   },
 
-  title: {
-    color: '#5c8599',
-    fontSize: 24,
+  section: {
+    color: '#a01313',
+    textAlign: 'left',
+ 
+
+
+  },
+  sectiontitle: {
+   
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+
+    color: '#000000',
+    textAlign: 'center',
+    fontSize: 18,
+    paddingBottom: 10,
+    paddingTop: 5,
+    paddingLeft: 5,
+    paddingRight: 15,
+  },
+  formtitlecontact: {
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+
+    color: '#000000',
+    textAlign: 'left',
+    fontSize: 18,
+    paddingBottom: 10,
+    paddingTop: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+
+  },
+  formtitle: {
+    padding: 19,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    color: '#000000',
+    fontSize: 16,
+    alignContent: 'flex-start',
     fontFamily: 'Nunito_700Bold',
-    marginBottom: 32,
-    paddingBottom: 24,
-    borderBottomWidth: 0.8,
-    borderBottomColor: '#D3E2E6'
+
   },
 
   label: {
-    color: '#8fa7b3',
+    width: 64,
+    height: 24,
+    color: '#747474',
     fontFamily: 'Nunito_600SemiBold',
-    marginBottom: 8,
+    
+ 
   },
 
   comment: {
@@ -175,15 +222,20 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: '#fff',
+
     borderWidth: 1.4,
-    borderColor: '#d3e2e6',
-    borderRadius: 20,
-    height: 56,
+    borderColor: '#c0cfd3',
+    
+
+    borderRadius: 10,
+    height: 22,
+    width: 185,
     paddingVertical: 18,
     paddingHorizontal: 24,
     marginBottom: 16,
     textAlignVertical: 'top',
+    position: 'relative',
+    alignSelf: 'flex-end',
   },
 
   uploadedImagesContainer: {

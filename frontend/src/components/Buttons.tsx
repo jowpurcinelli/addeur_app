@@ -35,8 +35,8 @@ const AppButton = ({ title }) => {
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    justifyContent: "center",
-    padding: 16
+    justifyContent: "flex-start",
+    padding: 6
   },
   appButtonContainer: {
     elevation: 8,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12
   },
   appButtonText: {
-    fontSize: 18,
+    fontSize: 12,
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
@@ -55,3 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#000"
   }
 });
+
+
+export default AppButton;
