@@ -15,17 +15,25 @@ interface options {
 const OrderDetailsButton = () => {
 
 
-
+  // const [buttonTitle, setButtonTitle] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   // const [buttonValue, setButtonValue] = useState();
+  const toggleSwitch = (value) => {
+    //To handle switch toggle
+    setIsEnabled(value);
+    //State changes according to switch
+  };
+  const options = [
+    { label: '', value: '' },
+  ];
 
-  const toggleButton = () => setIsEnabled(previousState => !previousState);
   return (
       <View style={styles.container}>
         <SwitchSelector
-          options={setIsEnabled}
+          style={styles.switch}
+          options={options}
           textColor={"#7C7C7C"}
-          onPress={toggleButton}
+          onPress={toggleSwitch}
           selectedTextContainerStyle={styles.title} 
           selectedColor={"#66CC7D"}
           buttonColor={"#E5E7E8"}
@@ -38,14 +46,21 @@ const OrderDetailsButton = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: "center",
-      justifyContent: "center"
+
+
     },
     title: {
       color: '#FFFFFF',
       fontSize: 30,
       fontFamily: 'Nunito_700Bold',
     },
+    switch: {
+      color: '#66CC7D',
+      position: 'relative',
+
+      alignItems: "center",
+      justifyContent: "center"
+    }
 
 
 });
