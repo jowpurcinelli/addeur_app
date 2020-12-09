@@ -4,7 +4,7 @@ import {View, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView} from 'rea
 // import { useNavigation, useFocusEffect } from 'react-navigation-native';
 // import api from '../services/api';
 
-
+import SplashScreenGif from '../components/SplashScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
@@ -18,7 +18,7 @@ const Welcome = () => {
   // }
 
 
-  
+  <SplashScreenGif />
   return(
     <View
       style={{ 
