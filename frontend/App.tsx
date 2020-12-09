@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 
 import Welcome from './src/pages/Welcome';
+import SplashScreenGif from './src/pages/splashScreen';
 
 import OrderDetailsButton from './src/components/OrderDetailsButton';
 import Routes from './src/Routes';
@@ -11,7 +12,8 @@ import Routes from './src/Routes';
 
 export default function App() {
   return (
-    <Welcome />
+    <><SplashScreenGif />
+      <Welcome /></>
   );
 }
 
