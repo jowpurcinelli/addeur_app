@@ -1,12 +1,13 @@
 import React from 'react';
 //import Logo from '../../../images';
-import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, ImageBackground, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 
 
 import api from '../services/api';
 
 import Container from './Welcome'
+
 
 const Choicesection = () => {
   const navigation = useNavigation();
@@ -18,15 +19,17 @@ const Choicesection = () => {
 
   
   return(
-    <Container style={styles.container}>
-      <TouchableOpacity 
-        onPress={
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../images/back.png")}
+        style={{ width: "100%", height: "100%" }}
+      >
+    
 
-      } >
 
         <Image
           style={{ width:450, height:350 }}
-          source={require("../../../images/Logo.svg")}
+          source={require("../../../images/logo.svg")}
         />
         
         <Image
@@ -36,6 +39,7 @@ const Choicesection = () => {
       
         <Text style={styles.container} > Click here if you are a Driver</Text>
       </TouchableOpacity>
+      </ImageBackground>
     </View>
   )
 }
