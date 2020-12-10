@@ -19,6 +19,10 @@ import { Feather } from '@expo/vector-icons';
 
 
 
+//drawable/selector_toggle_buttons
+// <ToggleButton />
+
+
 // Use this for connecting button title to api data dinamically 
 
 // useEffect(() => {

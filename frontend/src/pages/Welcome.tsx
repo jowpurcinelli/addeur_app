@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import Logo from '../../../images';
 import {View, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-native';
-// import { useNavigation, useFocusEffect } from 'react-navigation-native';
-// import api from '../services/api';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import api from '../services/api';
 
 import SplashScreenGif from '../components/SplashScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 
-
+interface Carrier {
+  id: number,
+  name: string,
+  
+}
 
 
 const Welcome = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
+  const [carrier, setCarrier] = useState<Carrier[]>([])
+
+  useFocusEffect(() => {
+    api.get('carriers').then(response => {  
+      setCarrier(response.data)
+    });
+  });
+
+
+  function handleNavigateToCarrier() {
+    navigation.navigate('HomeCarrier')
+  }
+  function handleNavigateToCostumer() {
+    navigation.navigate('HomeCostumer')
+  }
   // function handleNavigateToDriver() {
   //   navigation.navigate('DriverPage', { id });
   // }
 
 
-  <SplashScreenGif />
+//  <SplashScreenGif />
   return(
     <View
       style={{ 
@@ -26,6 +45,7 @@ const Welcome = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(6, 136, 238, 1)',
+        
 
       }}>
           <LinearGradient
@@ -46,8 +66,8 @@ const Welcome = () => {
       <Text style={styles.title}>What is your role?</Text>
       <TouchableOpacity  
         style={styles.card}
-        //onPress={}
-         >  
+        onPress={handleNavigateToCarrier}
+      >  
           <Image
             style={{ width:109, height:109}}
             source={require("../../images/Carrier.png")}
@@ -56,7 +76,9 @@ const Welcome = () => {
           
         <Text style={styles.text}>I'm a carrier</Text>
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.card2}>  
+      <TouchableOpacity 
+        style={styles.card2}
+        onPress={handleNavigateToCostumer}>  
         
         <Image
           style={{ width:109, height:109 }}

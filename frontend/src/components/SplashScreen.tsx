@@ -3,6 +3,7 @@ import { Image, Text, View } from 'react-native';
 import SplashScreen from 'expo-splash-screen';
 import { Asset } from 'expo-asset';
 
+
 export default class SplashScreenGif extends React.Component {
   state = {
     isReady: false,
@@ -17,7 +18,7 @@ export default class SplashScreenGif extends React.Component {
       return (
         <View style={{ flex: 1 }}>
           <Image
-            source={require('../../images/Logo.png')}
+            source={require('../../images/Addeur-Splash-Screen.gif')}
             onLoad={this._cacheResourcesAsync}
           />
         </View>

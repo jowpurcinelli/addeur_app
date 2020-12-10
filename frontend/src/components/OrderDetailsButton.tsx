@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Switch, StyleSheet, TouchableOpacity} from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons";
 
-
+import {RectButton} from 'react-native-gesture-handler';
 import SwitchSelector from "react-native-switch-selector";
 
 
@@ -15,12 +15,6 @@ import SwitchSelector from "react-native-switch-selector";
 
 const OrderDetailsButton = () => {
 
-  interface Options {
-    label: String,
-    value: String
-   
-  }
-
   const [buttonValue, setButtonValue] = useState<Options>();
 
   // const [buttonTitle, setButtonTitle] = useState('');
@@ -29,6 +23,12 @@ const OrderDetailsButton = () => {
   const options = [
     { label: '', value: '' },
   ];
+
+
+  
+
+
+
   
   const toggleSwitch = (value) => {
     //To handle switch toggle

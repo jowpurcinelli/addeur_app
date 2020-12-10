@@ -1,20 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Header from './components/Header';
+import MyinfoCostumer from '../pages/Costumer/MyinfoCostumer';
+import HomeCostumer from '../pages/Costumer/HomeCostumer';
+import Order from '../pages/Costumer/CostumerOrder';
 
-import Homepage from './pages/Homepage';
-import Login from './pages/Login';
-import Order from './pages/Order';
+
+import Login from '../pages/Login';
 
 
 const Tab = createStackNavigator();
 
+const MyinfoPage = useState();
 
-const Routes: React.FC = () => {
+//createDrawerNavigator = ({MyinfoPage});
+
+
+const RoutesCostumer: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
 
@@ -31,19 +36,14 @@ const Routes: React.FC = () => {
 
       <Tab.Screen 
         name="Myinfo" 
-        component={Myinfo}
-        options={{
-          headerShown: true,
-          header: () => <Header title="Seleccione en el mapa" />
-        }}
-     />
+        component={Myinfo}/>
 
       <Tab.Screen 
         name="OrphanageData" 
-        component={OrphanageData}
+        component={}
         options={{
           headerShown: true,
-          header: () => <Header title="Informe los datos" />
+          header: () => <Header title="Home" />
           }}
       />
       

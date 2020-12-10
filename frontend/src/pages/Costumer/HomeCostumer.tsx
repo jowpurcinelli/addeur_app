@@ -54,3 +54,6 @@ const HomeCostumer = () => {
     </View>
   )}
       
+
+
+export default HomeCostumer;
