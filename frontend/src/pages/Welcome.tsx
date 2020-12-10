@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import Logo from '../../../images';
-import {View, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-native';
+
+import {View, ImageBackground, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import api from '../services/api';
 
@@ -14,7 +15,12 @@ interface Carrier {
 }
 
 
+<<<<<<< HEAD
 const Welcome = () => {
+=======
+
+const Choicesection = () => {
+>>>>>>> 9b2292a71230655680a866442e46723768ab28ba
   const navigation = useNavigation();
 
   const [carrier, setCarrier] = useState<Carrier[]>([])
@@ -39,6 +45,7 @@ const Welcome = () => {
 
 //  <SplashScreenGif />
   return(
+<<<<<<< HEAD
     <View
       style={{ 
         flex: 1,
@@ -79,6 +86,20 @@ const Welcome = () => {
       <TouchableOpacity 
         style={styles.card2}
         onPress={handleNavigateToCostumer}>  
+=======
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../images/back.png")}
+        style={{ width: "100%", height: "100%" }}
+      >
+    
+
+
+        <Image
+          style={{ width:450, height:350 }}
+          source={require("../../../images/logo.svg")}
+        />
+>>>>>>> 9b2292a71230655680a866442e46723768ab28ba
         
         <Image
           style={{ width:109, height:109 }}
@@ -87,7 +108,11 @@ const Welcome = () => {
       
         <Text style={styles.text} > I'm a Costumer</Text>
       </TouchableOpacity>
+<<<<<<< HEAD
 
+=======
+      </ImageBackground>
+>>>>>>> 9b2292a71230655680a866442e46723768ab28ba
     </View>
   
 
