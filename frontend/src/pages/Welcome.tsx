@@ -8,28 +8,18 @@ import api from '../services/api';
 import SplashScreenGif from '../components/SplashScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 
-interface Carrier {
-  id: number,
-  name: string,
-  
-}
 
-
-<<<<<<< HEAD
 const Welcome = () => {
-=======
 
-const Choicesection = () => {
->>>>>>> 9b2292a71230655680a866442e46723768ab28ba
   const navigation = useNavigation();
 
-  const [carrier, setCarrier] = useState<Carrier[]>([])
+  // const [carrier, setCarrier] = useState<Carrier[]>([])
 
-  useFocusEffect(() => {
-    api.get('carriers').then(response => {  
-      setCarrier(response.data)
-    });
-  });
+  // useFocusEffect(() => {
+  //   api.get('carriers').then(response => {  
+  //     setCarrier(response.data)
+  //   });
+  // });
 
 
   function handleNavigateToCarrier() {
@@ -45,27 +35,12 @@ const Choicesection = () => {
 
 //  <SplashScreenGif />
   return(
-<<<<<<< HEAD
-    <View
-      style={{ 
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(6, 136, 238, 1)',
-        
-
-      }}>
-          <LinearGradient
-        // Background Linear Gradient
-            colors={['rgba(99, 212, 124, 1)','transparent']}
-            style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              top: 0,
-              height: 300,
-        }}
-      />
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../images/back.png")}
+        style={{ width: "100%", height: "100%" }}
+      >
+    
       <Image
         style={{ width:63, height:79, bottom:220,}}
         source={require("../../images/Logo.png")}
@@ -86,20 +61,7 @@ const Choicesection = () => {
       <TouchableOpacity 
         style={styles.card2}
         onPress={handleNavigateToCostumer}>  
-=======
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../images/back.png")}
-        style={{ width: "100%", height: "100%" }}
-      >
-    
-
-
-        <Image
-          style={{ width:450, height:350 }}
-          source={require("../../../images/logo.svg")}
-        />
->>>>>>> 9b2292a71230655680a866442e46723768ab28ba
+        
         
         <Image
           style={{ width:109, height:109 }}
@@ -108,16 +70,12 @@ const Choicesection = () => {
       
         <Text style={styles.text} > I'm a Costumer</Text>
       </TouchableOpacity>
-<<<<<<< HEAD
-
-=======
-      </ImageBackground>
->>>>>>> 9b2292a71230655680a866442e46723768ab28ba
+      </ImageBackground>  
     </View>
   
 
   )
-}
+}}
 
 const styles = StyleSheet.create({
 
@@ -133,6 +91,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     
+  },
+  container : {
+    flex: 1,
   },
   title: {
     bottom: 190,    

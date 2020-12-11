@@ -9,6 +9,9 @@ import {
   TouchableOpacity, 
   Image
 } from 'react-native';
+import SwitchSelector from 'react-native-switch-selector';
+
+import {useNavigation, useRoute} from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
 
 import AppButton from '../../components/Buttons';
@@ -16,7 +19,6 @@ import OrderDetailsButton from '../../components/OrderDetailsButton';
 import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
-
 
 
 //drawable/selector_toggle_buttons
@@ -37,11 +39,14 @@ import { Feather } from '@expo/vector-icons';
 // const route = useRoute();
 // const navigation = useNavigation();
 
-interface Product{
-    label: String,
-    value: String,
-
-}
+interface ProductDataRouteParams {
+    id: string;
+    name: string;
+    position: {
+      latitude: number;
+      longitude: number;
+    }    
+};
 
 
 //Gonna be using Huawei Cloud Services for Database
@@ -53,36 +58,40 @@ interface Product{
 
 
 const CostumerOrder = () => {
-    const [recipient_name, setRecipientName] = useState('');
-    const [recipient_contact, setRecipientContact] = useState('');
+  const route = useRoute();
+  const params = route.params as ProductDataRouteParams;
+  
+  const [recipient_name, setRecipientName] = useState('');
+  const [recipient_contact, setRecipientContact] = useState('');
 
     
-    const [product_category, setProductCategory] = useState('Fruits and Vegs');
-    const [product_type, setProductType] = useState('Chinese Cabage');
-    const [product_weight, setProductWeight] = useState('20 tons');
-    const [product_size, setProductSize] = useState('');
-    const [package_style, setpackageStyle] = useState('Wood Wrapped');
-    const [product_value, setProductValue] = useState('Enter actual value');
-    const [phone_number, setPhoneNumber] = useState('');
- //   const [images, setImages] = useState<string[]>([]);
-    
-    
-    return (
-      <ScrollView style={styles.container} contentContainerStyle={{ padding: 24 }}>
+  const [product_category, setProductCategory] = useState('Fruits and Vegs');
+  const [product_type, setProductType] = useState('Chinese Cabage');
+  const [product_weight, setProductWeight] = useState('20 tons');
+  const [product_size, setProductSize] = useState('');
+  const [package_style, setpackageStyle] = useState('Wood Wrapped');
+  const [product_value, setProductValue] = useState('Enter actual value');
+  const [phone_number, setPhoneNumber] = useState('');
+ //   const [images, setImages] = useState<string[]>([]);   
 
-        <Text style={styles.formtitlecontact}>Recipient Name</Text>
-            <TextInput 
-                style={styles.input}
-                value={recipient_name}
-                onChangeText={setRecipientName}
-            />
-        <Text style={styles.formtitlecontact}>Contact</Text>
-            <TextInputMask 
-                type={'cel-phone'}
-                style={styles.input}
-                value={phone_number}
-                onChangeText={setPhoneNumber}
-            />
+ 
+
+
+  return (
+    <ScrollView style={styles.container} contentContainerStyle={{ padding: 24 }}>
+      <Text style={styles.formtitlecontact}>Recipient Name</Text>
+      <TextInput 
+        style={styles.input}
+        value={recipient_name}
+        onChangeText={setRecipientName}
+      />
+      <Text style={styles.formtitlecontact}>Contact</Text>
+        <TextInputMask 
+          type={'cel-phone'}
+          style={styles.input}
+          value={phone_number}
+          onChangeText={setPhoneNumber}
+        />
 
 
         <View style={styles.sectiontitle}>
@@ -139,13 +148,9 @@ const CostumerOrder = () => {
       />
       </View>
 
-      <Text style={styles.section} />
-      <AppButton 
-        title={'7.6 miters'}
-      />
-      <AppButton 
-        title={'Platform'}
-      />
+      <View style={styles.recommended}>
+        <Text style={styles.section} />
+      </View>
 
 
 

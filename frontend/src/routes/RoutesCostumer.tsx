@@ -28,10 +28,6 @@ const RoutesCostumer: React.FC = () => {
       <Tab.Screen 
         name="Order" 
         component={Order} 
-        options={{
-          headerShown: true,
-            header: () => <Header showCancel={false} title="Order" />
-          }}
         />
 
       <Tab.Screen 

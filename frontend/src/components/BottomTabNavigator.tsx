@@ -4,7 +4,7 @@ import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-
 
 import Homepage from '../pages/Costumer/HomeCostumer';
 import CostumerOrder from '../pages/Costumer/CostumerOrder';
-import Myinfo from './pages/Myinfo';
+import Myinfo from '../pages/Costumer/MyinfoCostumer';
 
 
 

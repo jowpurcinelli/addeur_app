@@ -1,21 +1,13 @@
 import React from 'react';
 
-interface Input {
-  name: String
-  contact: Number
+const Register = () => {
+  const [ ]
+  
+  
+  
+  
+  return (
 
 
-}
-interface ProductDetails {
-  category: String
-  producttype: String
-  productweight: String
-  productsize: {
-    height: Number
-    width: Number
-    depth: number
-  }
-  packagestyle: String
-  productvalue: String
-
+  )
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { StyleSheet } from 'react-native'
-
-
 import { TouchableOpacity, Text } from 'react-native'
+
+//Checkbox to be used for Terms and Conditions Agreement
 
 const CheckBox = ({ selected, onPress, style, textStyle, size = 30, color = '#FFFFF', text = 'Click to agree to Terms and Conditions', ...props}) => (
     <TouchableOpacity style={[styles.checkBox, style]} onPress={onPress} {...props}>
