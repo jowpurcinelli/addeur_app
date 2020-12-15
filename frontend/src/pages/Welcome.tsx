@@ -74,8 +74,8 @@ const Welcome = () => {
     </View>
   
 
-  )
-}}
+  })
+
 
 const styles = StyleSheet.create({
 

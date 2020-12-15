@@ -148,7 +148,7 @@ const CostumerOrder = () => {
       />
       </View>
 
-      <View style={styles.recommended}>
+      <View>
         <Text style={styles.section} />
       </View>
 
@@ -170,6 +170,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#c5c5c5',
     flex: 1,
+  },
+  recommended: {
+    color: '',
   },
 
   section: {
