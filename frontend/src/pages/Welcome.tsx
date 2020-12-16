@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //import Logo from '../../../images';
 
 import {View, ImageBackground, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
-// import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import api from '../services/api';
 
 import SplashScreenGif from '../components/SplashScreen';
@@ -11,7 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Welcome = () => {
 
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   // const [carrier, setCarrier] = useState<Carrier[]>([])
 
@@ -22,12 +22,12 @@ const Welcome = () => {
   // });
 
 
-  // function handleNavigateToCarrier() {
-  //   navigation.navigate('HomeCarrier')
-  // }
-  // function handleNavigateToCostumer() {
-  //   navigation.navigate('HomeCostumer')
-  // }
+  function handleNavigateToCarrier() {
+    navigation.navigate('HomeCarrier')
+  }
+  function handleNavigateToCostumer() {
+    navigation.navigate('HomeCostumer')
+  }
   // function handleNavigateToDriver() {
   //   navigation.navigate('DriverPage', { id });
   // }
@@ -35,23 +35,24 @@ const Welcome = () => {
 
 //  <SplashScreenGif />
   return(
-    <View style={styles.container}>
+    <View style={{flex: 1}}>
       <ImageBackground
-        source={require("../images/back.png")}
-        style={{ width: "100%", height: "100%" }}
+        source={require("../../images/back.png")}
+
       >
+      <View style={styles.container}>
+      
     
-      <Image
-        style={{ width:63, height:79, bottom:220,}}
-        source={require("../../images/Logo.png")}
-      />
-      <Text style={styles.title}>What is your role?</Text>
+        <Image
+          style={styles.logo}
+          source={require("../../images/Logo.png")}
+        />
+        <Text style={styles.title}>What is your role?</Text>
       <TouchableOpacity  
         style={styles.card}
-        onPress={handleNavigateToCarrier}
+        // onPress={handleNavigateToCarrier}
       >  
           <Image
-            style={{ width:109, height:109}}
             source={require("../../images/Carrier.png")}
             
           />
@@ -60,16 +61,16 @@ const Welcome = () => {
       </TouchableOpacity> 
       <TouchableOpacity 
         style={styles.card2}
-        onPress={handleNavigateToCostumer}>  
-        
+        // onPress={handleNavigateToCostumer}>  
+        >
         
         <Image
-          style={{ width:109, height:109 }}
           source={require("../../images/Costumer.png")}
         />
       
         <Text style={styles.text} > I'm a Costumer</Text>
       </TouchableOpacity>
+      </View>
       </ImageBackground>  
     </View>
   
@@ -79,12 +80,32 @@ const Welcome = () => {
 
 const styles = StyleSheet.create({
 
+  container: {
+
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    position: 'relative',
+    marginTop: 30,
+
+    
+    
+
+  },
+  backgroundImage: {
+    resizeMode: 'cover',
+  },
+
   card: {
-    position: 'absolute',
-    width: 321,
-    height: 185,
-    top: 276,
+    position: 'relative',
     fontFamily: 'Nunito_800ExtraBold',
+    marginTop: 30,
+    marginBottom: 30,
+    height:180,
+    width: 280,
     fontSize: 16,
     backgroundColor: '#0382EB',
     borderRadius: 12,
@@ -92,39 +113,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     
   },
-  container : {
-    flex: 1,
-  },
+
+
   title: {
-    bottom: 190,    
+    position: 'relative',
     fontFamily: 'Noto Sans',
     textAlign: 'auto',
     fontSize: 24,
     color: 'white',
     fontWeight: '700',
     alignContent: 'center',
+    justifyContent: 'center',
   },
-  card2: {
-    position: 'absolute',
-    width: 321,
-    height: 185,
-    top: 480,
+    card2: {
+    position: 'relative',
     fontFamily: 'Nunito_800ExtraBold',
+    marginBottom: 50,
+    height: 180,
     fontSize: 16,
+    width: 280,
     backgroundColor: '#0382EB',
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',  
 },
+
   text: {
     fontFamily: 'Noto Sans',
     textAlign: 'auto',
     fontSize: 20,
     color: 'white',
   },
-  image: {
-    position: 'absolute'
-  }
+
 })
 
 export default Welcome;
