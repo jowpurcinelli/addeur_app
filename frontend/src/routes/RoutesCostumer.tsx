@@ -23,28 +23,21 @@ const RoutesCostumer: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
 
-      <Tab.Screen name="Home" component={Homepage} />
+      <Tab.Screen 
+        name="Home"  
+        component={HomeCostumer} />
       
       <Tab.Screen 
         name="Order" 
-        component={Order} 
-        />
+        component={Order} />
 
       <Tab.Screen 
         name="Myinfo" 
-        component={Myinfo}/>
+        component={MyinfoCostumer}/>
 
-      <Tab.Screen 
-        name="OrphanageData" 
-        component={}
-        options={{
-          headerShown: true,
-          header: () => <Header title="Home" />
-          }}
-      />
       
     </Tab.Navigator>
   );
-}
+};
 
 export default Routes;

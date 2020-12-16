@@ -6,7 +6,7 @@ import Welcome from './src/pages/Welcome';
 import SplashScreenGif from './src/pages/splashScreen';
 import CostumerOrder from './src/pages/Costumer/CostumerOrder';
 import OrderDetailsButton from './src/components/OrderDetailsButton';
-import Routes from './src/Routes';
+//import Routes from './src/Routes';
 import HomeCostumer from './src/pages/Costumer/HomeCostumer';
 
 // const Button = OrderDetailsButton.call(Option)

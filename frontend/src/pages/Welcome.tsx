@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //import Logo from '../../../images';
 
 import {View, ImageBackground, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
+// import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import api from '../services/api';
 
 import SplashScreenGif from '../components/SplashScreen';
@@ -11,7 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Welcome = () => {
 
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   // const [carrier, setCarrier] = useState<Carrier[]>([])
 
@@ -22,12 +22,12 @@ const Welcome = () => {
   // });
 
 
-  function handleNavigateToCarrier() {
-    navigation.navigate('HomeCarrier')
-  }
-  function handleNavigateToCostumer() {
-    navigation.navigate('HomeCostumer')
-  }
+  // function handleNavigateToCarrier() {
+  //   navigation.navigate('HomeCarrier')
+  // }
+  // function handleNavigateToCostumer() {
+  //   navigation.navigate('HomeCostumer')
+  // }
   // function handleNavigateToDriver() {
   //   navigation.navigate('DriverPage', { id });
   // }
@@ -74,7 +74,7 @@ const Welcome = () => {
     </View>
   
 
-  })
+  )}
 
 
 const styles = StyleSheet.create({

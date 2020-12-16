@@ -4,6 +4,7 @@ import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-
 
 import { createStackNavigator } from '@react-navigation/stack';
 
+
 import MyinfoCostumer from './pages/Carrier/MyinfoCostumer';
 import HomeCostumer from './pages/Carrier/HomeCostumer';
 import Order from '../pages/Carrier/CarrierOrder';
@@ -36,7 +37,7 @@ const RoutesCarrier: React.FC = () => {
 
       <Tab.Screen 
         name="Myinfo" 
-        component={Myinfo}/>
+        component={MyinfoCarrier}/>
 
       <Tab.Screen 
         name="OrphanageData" 
