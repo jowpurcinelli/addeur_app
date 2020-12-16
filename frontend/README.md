@@ -1,4 +1,4 @@
-# [TypeScript Example](https://www.typescriptlang.org/)
+
 
 <p>
   <!-- iOS -->
@@ -14,17 +14,13 @@ npx create-react-native-app -t with-typescript
 ```
 
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
 
-## 🚀 How to use
-
-#### Creating a new project
 
 - Install the CLI: `npm i -g expo-cli`
 - Create a project: `expo init --template expo-template-blank-typescript`
 - `cd` into the project
 
-### Adding TypeScript to existing projects
+
 
 - Copy the `tsconfig.json` from this repo, or new typescript template
 - Add typescript dependencies: `yarn add --dev @types/react @types/react-native @types/react-dom typescript`
