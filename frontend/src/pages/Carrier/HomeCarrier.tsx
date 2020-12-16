@@ -6,6 +6,8 @@ import { RectButton } from 'react-native-gesture-handler';
 
 import api from '../services/api';
 
+import Header from '../../components/Header';
+
 import mapMarker from '../images/map-marker.png';
 import { Feather } from '@expo/vector-icons';
 
@@ -41,10 +43,10 @@ const HomeCarrier = () => {
 
 
   return (
-    <View style={styles.container}>
+    <View style={{flex: 1}}>
+      <Header title={'Find a truck'}/>
       <MapView
         provider={PROVIDER_GOOGLE}
-        style={styles.map}
         initialRegion={{
           latitude: 0,
           longitude:0 ,
