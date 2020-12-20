@@ -4,7 +4,7 @@ import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import api from '../services/api';
+import api from '../../services/api';
 
 import Header from '../../components/Header';
 
