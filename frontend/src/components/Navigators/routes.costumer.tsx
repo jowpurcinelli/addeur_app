@@ -1,18 +1,22 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
-import HomeCostumer from '../pages/Costumer/HomeCostumer';
-import CostumerOrder from '../pages/Costumer/CostumerOrder';
-import MyinfoCostumer from '../pages/Costumer/MyinfoCostumer';
+import HomeCostumer from '../../pages/Costumer/HomeCostumer';
+import CostumerOrder from '../../pages/Costumer/CostumerOrder';
+import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
 
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useIsFocused } from '@react-navigation/native';
+
+
 
 
 const Tab = createStackNavigator();
 
 const CostumerRoutes = (navigation) => {
+  
   return (
     <Tab.Navigator initialRouteName="Home" activeColor="#FFF">
 
@@ -23,7 +27,7 @@ const CostumerRoutes = (navigation) => {
           tabBarLabel: 'Home',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='ios-home' color={color} size={26} />
+            <Icon name='ios-home' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
         onPress={() => { 
@@ -38,7 +42,7 @@ const CostumerRoutes = (navigation) => {
           tabBarLabel: 'Order',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='list-outline' color={color} size={26} />
+            <Icon name='list-outline' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
           }}
           onPress={() => { 
@@ -53,7 +57,7 @@ const CostumerRoutes = (navigation) => {
           tabBarLabel: 'Myinfo',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='ios-person' color={color} size={26} />
+            <Icon name='ios-person' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
         onPress={() => { 

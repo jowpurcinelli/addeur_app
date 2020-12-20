@@ -37,9 +37,6 @@ const MyinfoCostumer = () => {
   }
   
   
-  return (
-
-  )
 
 };
 

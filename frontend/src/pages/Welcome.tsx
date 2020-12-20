@@ -8,6 +8,7 @@ import api from '../services/api';
 import SplashScreenGif from '../components/SplashScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import CostumerRoutes from '../components/Navigators/routes.costumer'
 
 const Welcome = () => {
 
@@ -36,6 +37,7 @@ const Welcome = () => {
 //  <SplashScreenGif />
   return(
     <View style={{flex: 1}}>
+      <CostumerRoutes />
       <ImageBackground
         source={require("../../images/back.png")}
 

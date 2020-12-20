@@ -6,14 +6,22 @@ import Welcome from './src/pages/Welcome';
 import SplashScreenGif from './src/pages/splashScreen';
 import CostumerOrder from './src/pages/Costumer/CostumerOrder';
 import OrderDetailsButton from './src/components/OrderDetailsButton';
-//import Routes from './src/Routes';
+import CostumerRoutes from './src/routes/routes.costumer';
 import HomeCostumer from './src/pages/Costumer/HomeCostumer';
 
 // const Button = OrderDetailsButton.call(Option)
 
 export default function App() {
+  const initialLoginState = {
+    isLoading: true,
+    userName: null,
+    userToken: null
+  };
+
+
   return (
-      <Welcome/>
+      
+      <Welcome />
   );
 }
 

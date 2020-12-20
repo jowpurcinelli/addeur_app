@@ -2,12 +2,13 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
-import HomeCarrier from '../pages/Carrier/HomeCarrier';
-import CarrierOrder from '../pages/Carrier/CarrierOrder';
-import MyinfoCarrier from '../pages/Carrier/MyinfoCarrier';
+import HomeCarrier from '../../pages/Carrier/HomeCarrier';
+import CarrierOrder from '../../pages/Carrier/CarrierOrder';
+import MyinfoCarrier from '../../pages/Carrier/MyinfoCarrier';
 
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useIsFocused } from '@react-navigation/native';
 
 
 const Tab = createStackNavigator();
@@ -23,7 +24,7 @@ const CarrierRoutes = (navigation) => {
           tabBarLabel: 'Home',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='ios-home' color={color} size={26} />
+            <Icon name='ios-home' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
         onPress={() => { 
@@ -38,7 +39,7 @@ const CarrierRoutes = (navigation) => {
           tabBarLabel: 'Order',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='list-outline' color={color} size={26} />
+            <Icon name='list-outline' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
           }}
           onPress={() => { 
@@ -53,7 +54,7 @@ const CarrierRoutes = (navigation) => {
           tabBarLabel: 'Myinfo',
           tabBarColor: '#FFF',
           tabBarIcon: ({color}) => (
-            <Icon name='ios-person' color={color} size={26} />
+            <Icon name='ios-person' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
         onPress={() => { 
