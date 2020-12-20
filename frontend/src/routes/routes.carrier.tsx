@@ -5,9 +5,9 @@ import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import MyinfoCostumer from './pages/Carrier/MyinfoCostumer';
-import HomeCostumer from './pages/Carrier/HomeCostumer';
-import Order from '../pages/Carrier/CarrierOrder';
+import MyinfoCarrier from '../pages/Carrier/MyinfoCarrier';
+import HomeCarrier from '../pages/Costumer/HomeCostumer';
+import CostumerCarrier from '../pages/Carrier/CarrierOrder';
 
 
 import Login from './pages/Login';

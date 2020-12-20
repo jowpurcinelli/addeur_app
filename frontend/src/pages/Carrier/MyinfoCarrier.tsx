@@ -1,20 +1,32 @@
-import React, {useState} from 'react';
+Fiximport React from 'react';
+import {View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 
 
-//Sidebar will receive props, containing user (costumer or carrier) data.
-//Data that will come from backend and will be received from an array 
-//in json format 
+//MyInfo page structure:
+
+//User Name and Photo
+//Manage my Truck
+//Coupon
+//My wallet
+//Settings
+//HelpCentre
+//AboutUs
 
 
-const Myinfo = () => {
+const MyinfoCarrier = () => {
+    return (
+      <View>
+
+      </View>
+    )
   
-  const [isUser, setIsUser] = useState(false);
-
-  
-  
-  
-  return (
-    <Sidebar 
-      />
-  )
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor
+  }
+})
