@@ -1,55 +1,73 @@
-import React, {useState} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
-import { createStackNavigator } from '@react-navigation/stack';
-
-
+import HomeCarrier from '../pages/Carrier/HomeCarrier';
+import CarrierOrder from '../pages/Carrier/CarrierOrder';
 import MyinfoCarrier from '../pages/Carrier/MyinfoCarrier';
-import HomeCarrier from '../pages/Costumer/HomeCostumer';
-import CostumerCarrier from '../pages/Carrier/CarrierOrder';
 
 
-import Login from './pages/Login';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const Tab = createStackNavigator();
 
-const MyinfoPage = useState();
-
-//createDrawerNavigator = ({MyinfoPage});
-
-
-const RoutesCarrier: React.FC = () => {
+const CarrierRoutes = (navigation) => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
+    <Tab.Navigator initialRouteName="Home" activeColor="#FFF">
 
-      <Tab.Screen name="Home" component={Homepage} />
+      <Tab.Screen 
+        name="Home" 
+        component={HomeCarrier}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarColor: '#FFF',
+          tabBarIcon: ({color}) => (
+            <Icon name='ios-home' color={color} size={26} />
+          ),
+        }}
+        onPress={() => { 
+          navigation.navigate('HomeCarrier')
+        }}
+        />
       
       <Tab.Screen 
         name="Order" 
-        component={Order} 
+        component={CarrierOrder} 
         options={{
-          headerShown: true,
-            header: () => <Header showCancel={false} title="Order" />
+          tabBarLabel: 'Order',
+          tabBarColor: '#FFF',
+          tabBarIcon: ({color}) => (
+            <Icon name='list-outline' color={color} size={26} />
+          ),
+          }}
+          onPress={() => { 
+            navigation.navigate('CarrierOrder')
           }}
         />
 
       <Tab.Screen 
         name="Myinfo" 
-        component={MyinfoCarrier}/>
-
-      <Tab.Screen 
-        name="OrphanageData" 
-        component={}
+        component={MyinfoCarrier}
         options={{
-          headerShown: true,
-          header: () => <Header title="Home" />
-          }}
-      />
+          tabBarLabel: 'Myinfo',
+          tabBarColor: '#FFF',
+          tabBarIcon: ({color}) => (
+            <Icon name='ios-person' color={color} size={26} />
+          ),
+        }}
+        onPress={() => { 
+          navigation.navigate('MyinfoCarrier')
+        }}
+     />
+
+
       
     </Tab.Navigator>
   );
 }
 
-export default RoutesCarrier;
+export default CarrierRoutes;
+
+
+

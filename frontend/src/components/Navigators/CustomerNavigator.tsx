@@ -2,9 +2,9 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
-import Homepage from '../pages/Costumer/HomeCostumer';
-import CostumerOrder from '../pages/Costumer/CostumerOrder';
-import Myinfo from '../pages/Costumer/MyinfoCostumer';
+import HomeCostumer from '../../pages/Costumer/HomeCostumer';
+import CostumerOrder from '../../pages/Costumer/CostumerOrder';
+import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
 
 
 
@@ -12,15 +12,19 @@ const Tab = createStackNavigator();
 
 const BottomTabNavigator: React.FC = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: '#f2f3f5' } }}>
+    <Tab.Navigator initialRouteName="Home" activeColor="#FFF">
 
       <Tab.Screen 
         name="Home" 
-        component={Homepage} />
+        component={HomeCostumer}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarColor: '#FF6347'
+        }} />
       
       <Tab.Screen 
         name="Order" 
-        component={Order} 
+        component={CostumerOrder} 
         options={{
           
           }}
@@ -28,7 +32,7 @@ const BottomTabNavigator: React.FC = () => {
 
       <Tab.Screen 
         name="Myinfo" 
-        component={Myinfo}
+        component={MyinfoCostumer}
         options={{
 
         }}
