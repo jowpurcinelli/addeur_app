@@ -31,21 +31,19 @@ const MyinfoCostumer = () => {
 
   function handleNavigateToCarrier() {
     navigation.navigate('HomeCarrier')
-  }
+  };
   function handleNavigateToCostumer() {
     navigation.navigate('HomeCostumer')
-  }
+  };
   
   
 
 };
 
 const styles = StyleSheet.create({
-  image: {
-    width: Dimensions.get('window').width,
-    height: 240,
-    resizeMode: 'cover',
-  },
+  container: {
+    flex: 1,
+  }
 });
 
 
