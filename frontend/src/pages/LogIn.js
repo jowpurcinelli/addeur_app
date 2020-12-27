@@ -57,7 +57,7 @@ class Login extends Component {
       <article id="login-page">
         <Menu current="login"/>
         <p>
-          Please log in to report an incident!
+          Please log in!
         </p>
         <form>
           <label>Username</label>
