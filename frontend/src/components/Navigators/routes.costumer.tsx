@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
-import HomeCostumer from '../../pages/Costumer/HomeCostumer';
+import HomeCostumer from '../../pages/Carrier/HomeCostumer';
 import CostumerOrder from '../../pages/Costumer/CostumerOrder';
 import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
 

@@ -7,7 +7,7 @@ import SplashScreenGif from './src/pages/splashScreen';
 import CostumerOrder from './src/pages/Costumer/CostumerOrder';
 import OrderDetailsButton from './src/components/OrderDetailsButton';
 import CostumerRoutes from './src/routes/routes.costumer';
-import HomeCostumer from './src/pages/Costumer/HomeCostumer';
+import HomeCostumer from './src/pages/Carrier/HomeCostumer';
 
 // const Button = OrderDetailsButton.call(Option)
 
