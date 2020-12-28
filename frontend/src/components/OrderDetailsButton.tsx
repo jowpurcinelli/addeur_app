@@ -15,7 +15,6 @@ import SwitchSelector from "react-native-switch-selector";
 
 const OrderDetailsButton = () => {
 
-  const [buttonValue, setButtonValue] = useState<Options>();
 
   // const [buttonTitle, setButtonTitle] = useState('');
   const [isEnabled, setIsEnabled] = useState(undefined);

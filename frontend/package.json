@@ -11,6 +11,8 @@
     "axios": "^0.21.0",
     "expo": "~39.0.0",
     "expo-linear-gradient": "~8.3.0",
+    "formik": "^2.2.6",
+    "native-base": "^2.15.0",
     "react": "~16.13.0",
     "react-dom": "~16.13.0",
     "react-native": "^0.63.4",

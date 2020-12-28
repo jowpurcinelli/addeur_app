@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { 
   ScrollView, 
-  View, 
   StyleSheet, 
   Switch, 
-  Text, 
   TextInput, 
   TouchableOpacity, 
   Image
 } from 'react-native';
+import {View, Text, Form, Label, Item} from 'native-base';
+
 import SwitchSelector from 'react-native-switch-selector';
 
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -20,6 +20,8 @@ import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 
+import {useFormik} from 'formik';
+import { Container } from './styles';
 
 //drawable/selector_toggle_buttons
 // <ToggleButton />
@@ -39,14 +41,6 @@ import { Feather } from '@expo/vector-icons';
 // const route = useRoute();
 // const navigation = useNavigation();
 
-interface ProductDataRouteParams {
-    id: string;
-    name: string;
-    position: {
-      latitude: number;
-      longitude: number;
-    }    
-};
 
 
 //Gonna be using Huawei Cloud Services for Database
@@ -58,11 +52,9 @@ interface ProductDataRouteParams {
 
 
 const CostumerOrder = () => {
-  const route = useRoute();
-  const params = route.params as ProductDataRouteParams;
-  
+  const route = useRoute();  
   const [recipient_name, setRecipientName] = useState('');
-  const [recipient_contact, setRecipientContact] = useState('');
+  const {recipient_contact, setRecipientContact} = useState('');
 
     
   const [product_category, setProductCategory] = useState('Fruits and Vegs');
@@ -74,90 +66,77 @@ const CostumerOrder = () => {
   const [phone_number, setPhoneNumber] = useState('');
  //   const [images, setImages] = useState<string[]>([]);   
 
- 
+  const {values, isSubmitting, setFieldValue} = useFormik({
+    initialValues: {
+      recipient_name: '',
+      recipient_contact: '',
+      product_category: '',
+      product_type: '',
+      product_weight: '',
+      product_size: '',
+      product_style: '',
+      product_value: '',
+      phone_number: '',
+
+
+    },
+    onSubmit: values => {
+
+    },
+  })
 
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ padding: 24 }}>
-      <Text style={styles.formtitlecontact}>Recipient Name</Text>
-      <TextInput 
-        style={styles.input}
-        value={recipient_name}
-        onChangeText={setRecipientName}
-      />
-      <Text style={styles.formtitlecontact}>Contact</Text>
-        <TextInputMask 
-          type={'cel-phone'}
-          style={styles.input}
-          value={phone_number}
-          onChangeText={setPhoneNumber}
-        />
-
-
-        <View style={styles.sectiontitle}>
-        <Text style={styles.sectiontitle}>Product Details</Text>
-
-        <Text style={styles.label}>Product category</Text>
-            <TextInput
+    <ScrollView>
+    
+    
+    <Container>
+      <Form>
+        <Item>
+          <Label>Recipient Name</Label>
+          <Input 
+            style={styles.input}
+            value={values.recipient_name}
+            onChangeText={text => setFieldValue('recipient_name', text)}
+          />
+        </Item>
+        <Item>
+          <Label>Contact</Label>
+          <Input 
+            style={styles.input}
+            value={values.recipient_contact}
+            onChangeText={text => setFieldValue('recipient_contact', text)}
+          />
+        </Item>
+      </Form>
+    </Container>
+        <Container
+          style={styles.sectiontitle}>
+            <Text style={styles.sectiontitle}>Product Details</Text>
+          <Form>
+            <Item>
+              <Label>Product Category</Label>
+              <Input
                 style={styles.input}
-                value={product_category}
-                onChangeText={setProductCategory}
-            />
-
-        <Text style={styles.label}>Product Type</Text>
-            <TextInput
+                value={values.product_category}
+                onChangeText={text => setFieldValue('product_category', text)}/>  
+            </Item>
+          </Form>
+        </Container>
+        
+        <Container
+          style={styles.sectiontitle}>
+            <Text style={styles.sectiontitle}>Product Type</Text>
+          <Form>
+            <Item>
+              <Label>Product Type</Label>
+              <Input
                 style={styles.input}
-                value={product_type}
-                onChangeText={setProductType}
-            />
-
-        <Text style={styles.label}>Product Weight</Text>
-            <TextInput
-                style={styles.input}
-                value={product_weight}
-                onChangeText={setProductWeight}
-      />
-        <Text style={styles.label}>Product Size</Text>
-            <TextInput
-                style={styles.input}
-                value={product_size}
-                onChangeText={setProductSize}
-            />
-            <TextInput
-                style={styles.input}
-                value={product_size}
-                onChangeText={setProductSize}
-            />
-            <TextInput
-              
-              style={styles.input}
-              value={product_size}
-              onChangeText={setProductSize}
-            />
-        <Text style={styles.label}>Package Style</Text>
-            <TextInput
-                style={styles.input}
-                value={package_style}
-                onChangeText={setpackageStyle}
-      />              
-        <Text style={styles.label}>Product Value</Text>
-            <TextInput
-                style={styles.input}
-                value={product_value}
-                onChangeText={setProductValue}
-      />
-      </View>
-
-      <View>
-        <Text style={styles.section} />
-      </View>
-
-
-
-
-
-
-
+                value={values.product_type}
+                onChangeText={text => setFieldValue('product_type', text)}/>  
+            </Item>
+          </Form>
+        </Container>     
 
 
         
