@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('users', {
@@ -7,7 +5,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true, 
+        primaryKey: true,
       },
       name: {
         type: Sequelize.STRING,
@@ -22,8 +20,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      phone_number: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
       provider: {
-        type:sequelize.BOOLEAN,
+        type: Sequelize.BOOLEAN,
         defaultValue: false,
         allowNull: false,
       },
@@ -37,11 +40,9 @@ module.exports = {
       },
 
     });
-
   },
 
-  down: async queryInterface => {
+  down: async (queryInterface) => {
     await queryInterface.dropTable('users');
-
-  }
+  },
 };

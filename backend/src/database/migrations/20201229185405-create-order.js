@@ -1,3 +1,28 @@
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('orders', {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      carrier_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'users', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        allowNull: true,
+        autoIncrement: true,
+      },
+    });
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable('users');
+  },
+};
+
 /*
             $table->uuid('id')->primary();
             $table->uuid('carrier_id');

@@ -3,7 +3,6 @@ import 'express-async-errors';
 
 const app = express();
 
-app.use(express.json( ));
+app.use(express.json());
 
 app.listen(3333);
-
