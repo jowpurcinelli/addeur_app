@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import {
   startOfHour, parseISO, isBefore, format, subHours,
 } from 'date-fns';
-import ch from 'date-fns/locale/ch';
+import cn from 'date-fns/locale/zh-CN';
 import Order from '../models/Order';
 import User from '../models/User';
 // import File from '../models/File';
@@ -121,7 +121,7 @@ class OrderController {
       hourStart,
       "'day' dd 'm' MMMM', hr H:mm'h'",
       {
-        locale: ch,
+        locale: cn,
       },
     );
     await Notification.create({
