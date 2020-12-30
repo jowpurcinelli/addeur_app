@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import multer from 'multer';
 
-import CostumerController from './app/controllers/UserController';
+import UserController from './app/controllers/UserController';
 
 const routes = Router();
 const upload = multer();
+
+routes.post('/users', UserController.store);
 
 // carrier routes
 routes.get('/carrier', CarrierController.index);
