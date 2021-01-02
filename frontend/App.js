@@ -1,3 +1,5 @@
+import { registerRootComponent } from 'expo';
+
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -7,10 +9,8 @@ import SplashScreenGif from './src/pages/SplashScreen';
 import CostumerOrder from './src/pages/Costumer/CostumerOrder';
 import OrderDetailsButton from './src/components/OrderDetailsButton';
 // import CostumerRoutes from './src/routes/routes.costumer';
-// import HomeCostumer from './src/pages/Carrier/HomeCostumer';
-
+import HomeCostumer from './src/pages/Costumer/HomeCostumer';
 // const Button = OrderDetailsButton.call(Option)
-
 export default function App() {
   const initialLoginState = {
     isLoading: true,
@@ -21,9 +21,11 @@ export default function App() {
 
   return (
       
-      <CostumerOrder />
+      <HomeCostumer />
   );
 }
+
+registerRootComponent(App);
 
 const styles = StyleSheet.create({
   container: {

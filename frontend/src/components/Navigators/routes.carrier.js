@@ -16,14 +16,13 @@ const Tab = createStackNavigator();
 const CarrierRoutes = (navigation) => {
   return (
     <Tab.Navigator initialRouteName="Home" activeColor="#FFF">
-
       <Tab.Screen 
         name="Home" 
         component={HomeCarrier}
         options={{
           tabBarLabel: 'Home',
           tabBarColor: '#FFF',
-          tabBarIcon: ({color}) => (
+          tabBarIcon: () => (
             <Icon name='ios-home' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
@@ -38,7 +37,7 @@ const CarrierRoutes = (navigation) => {
         options={{
           tabBarLabel: 'Order',
           tabBarColor: '#FFF',
-          tabBarIcon: ({color}) => (
+          tabBarIcon: () => (
             <Icon name='list-outline' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
           }}

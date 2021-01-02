@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
-
-import HomeCostumer from '../../pages/Carrier/HomeCostumer';
-import CostumerOrder from '../../pages/Costumer/CostumerOrder';
-import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
-
-
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useIsFocused } from '@react-navigation/native';
 
-
+//pages
+import HomeCostumer from '../../pages/Costumer/HomeCostumer';
+import CostumerOrder from '../../pages/Costumer/CostumerOrder';
+import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
 
 const Tab = createStackNavigator();
 
-
- const CostumerRoutes = (navigation) => {
+const CostumerRoutes = (navigation) => {
 
   return (
     <Tab.Navigator initialRouteName='Home' >
@@ -60,7 +56,4 @@ const Tab = createStackNavigator();
   );
 }
 
-
-
-
-
+export default CostumerRoutes;

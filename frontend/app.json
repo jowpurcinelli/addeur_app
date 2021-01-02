@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "AddeurApp",
+    "slug": "addeur",
+    "platforms": ["ios", "android", "web"],
+    "version": "0.1.2",
+    "orientation": "portrait",
+    "icon": "./images/Logo.png",
+    "splash": {
+      "image": "./images/Logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
