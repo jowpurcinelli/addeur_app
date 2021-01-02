@@ -16,19 +16,19 @@ export default class SplashScreenGif extends React.Component {
     if (!this.state.isReady) {
       return (
         <View style={{ flex: 1 }}>
-          <Image
-            source={require('../../images/Addeur-Splash-Screen.gif')}
-            onLoad={this._cacheResourcesAsync}
-          />
+          <Image source={require('../../images/Logo.png')} />
         </View>
       );
     }
 
     return (
       <View style={{ flex: 1 }}>
-        <Image source={require('./assets/images/expo-icon.png')} />
-        <Image source={require('./assets/images/slack-icon.png')} />
+      <Image
+        source={require('../../images/Addeur-Splash-Screen.gif')}
+        onLoad={this._cacheResourcesAsync}
+      />
       </View>
+
     );
   }
 

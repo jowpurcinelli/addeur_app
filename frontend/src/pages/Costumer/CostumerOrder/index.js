@@ -14,9 +14,8 @@ import SwitchSelector from 'react-native-switch-selector';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
 
-import AppButton from '../../components/Buttons';
-import OrderDetailsButton from '../../components/OrderDetailsButton';
-import CheckBox from '../../components/CheckBox';
+// import OrderDetailsButton from '../../components/OrderDetailsButton';
+// import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 

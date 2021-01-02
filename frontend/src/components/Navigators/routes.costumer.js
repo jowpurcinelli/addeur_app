@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 
@@ -12,11 +12,11 @@ import { useIsFocused } from '@react-navigation/native';
 
 
 
-
 const Tab = createStackNavigator();
 
-const CostumerRoutes: React.FC = () => {
-  
+
+ const CostumerRoutes = (navigation) => {
+
   return (
     <Tab.Navigator initialRouteName='Home' >
 
@@ -25,7 +25,6 @@ const CostumerRoutes: React.FC = () => {
         component={HomeCostumer}
         options={{
           tabBarLabel: 'Order',
-          tabBarColor: #F0F0F0,
           tabBarIcon: ({color}) => (
             <Icon name='ios-home' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
@@ -44,7 +43,7 @@ const CostumerRoutes: React.FC = () => {
           ),
           }}
 
-        />
+      />
 
       <Tab.Screen 
         name="Myinfo" 
@@ -56,16 +55,12 @@ const CostumerRoutes: React.FC = () => {
             <Icon name='ios-person' color={useIsFocused ? '#0382EB' : '#B8B8B8'} size={26} />
           ),
         }}
-
      />
-
-
-      
     </Tab.Navigator>
   );
 }
 
-export default CostumerRoutes;
+
 
 
 
