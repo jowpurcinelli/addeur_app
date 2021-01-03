@@ -39,14 +39,14 @@ import { Feather } from '@expo/vector-icons';
 // const route = useRoute();
 // const navigation = useNavigation();
 
-interface ProductDataRouteParams {
-    id: string;
-    name: string;
-    position: {
-      latitude: number;
-      longitude: number;
-    }    
-};
+// interface ProductDataRouteParams {
+//     id: string;
+//     name: string;
+//     position: {
+//       latitude: number;
+//       longitude: number;
+//     }    
+// };
 
 
 //Gonna be using Huawei Cloud Services for Database
