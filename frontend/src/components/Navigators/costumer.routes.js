@@ -9,7 +9,10 @@ import HomeCostumer from '../../pages/Costumer/HomeCostumer';
 import CostumerOrder from '../../pages/Costumer/CostumerOrder';
 import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
 
+
 const Tab = createStackNavigator();
+
+
 
 const CostumerRoutes = (navigation) => {
 

@@ -2,12 +2,12 @@ import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import AuthRoutes from './auth.routes';
-import AppRoutes from './routes.carrier';
-import CostumerRoutes from './routes.costumer'
+import CarrierRoutes from '../components/Navigators/carrier.routes'
+import CostumerRoutes from '../components/Navigators/costumer.routes';
 
 import { useAuth } from '../hooks/auth';
 
-const Routes: React.FC = () => {
+const Routes  = () => {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -16,7 +16,7 @@ const Routes: React.FC = () => {
         <ActivityIndicator size="large" color="#999" />
       </View>
     );
-  }
+  };
 
   return user ? <AppRoutes /> : <AuthRoutes />;
 };

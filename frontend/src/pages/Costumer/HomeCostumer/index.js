@@ -2,7 +2,7 @@ import react from 'react';
 import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {Container} from './styles';
-import CostumerRoutes from '../../../components/Navigators/routes.costumer';
+import CostumerRoutes from '../../../components/Navigators/costumer.routes';
 
 const HomeCostumer = () => {
   return (
