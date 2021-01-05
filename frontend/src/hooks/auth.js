@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import api from '../services/api';
+import api from '../../../mobile/src/services/api';
 
 interface User {
   id: string;

@@ -6,8 +6,8 @@ import { useIsFocused } from '@react-navigation/native';
 
 //pages
 import HomeCostumer from '../../pages/Costumer/HomeCostumer';
-import CostumerOrder from '../../pages/Costumer/CostumerOrder';
-import MyinfoCostumer from '../../pages/Costumer/MyinfoCostumer';
+import CostumerOrder from '../../../../mobile/src/pages/Costumer/CostumerOrder';
+import MyinfoCostumer from '../../../../mobile/src/pages/Costumer/MyinfoCostumer';
 
 
 const Tab = createStackNavigator();

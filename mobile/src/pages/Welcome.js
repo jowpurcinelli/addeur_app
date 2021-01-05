@@ -1,44 +1,24 @@
-import React, { useState } from 'react';
-//import Logo from '../../../images';
-
+import React from 'react';
 import {View, ImageBackground, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import api from '../../../mobile/src/services/api';
+// import api from '../services/api';
 
-import SplashScreenGif from '../components/SplashScreen';
-import { LinearGradient } from 'expo-linear-gradient';
 
-import CostumerRoutes from '../components/Navigators/routes.costumer'
+// import CostumerRoutes from '../components/Navigators/routes.costumer'
+
 
 const Welcome = () => {
-
-  const navigation = useNavigation();
-
-  // const [carrier, setCarrier] = useState<Carrier[]>([])
-
-  // useFocusEffect(() => {
-  //   api.get('carriers').then(response => {  
-  //     setCarrier(response.data)
-  //   });
-  // });
-
-
-  function handleNavigateToCarrier() {
-    navigation.navigate('HomeCarrier')
-  }
-  function handleNavigateToCostumer() {
-    navigation.navigate('HomeCostumer')
-  }
-  // function handleNavigateToDriver() {
-  //   navigation.navigate('DriverPage', { id });
+  // const navigation = useNavigation();
+  // function handleNavigateToCarrier() {
+  //   navigation.navigate('')
   // }
-
-
-//  <SplashScreenGif />
+  // function handleNavigateToCostumer() {
+  //   navigation.navigate('')
+  // }
   return(
     <View style={{flex: 1}}>
-      <CostumerRoutes />
       <ImageBackground
+        style={{flex:1}}
         source={require("../../images/back.png")}
 
       >
@@ -50,6 +30,7 @@ const Welcome = () => {
           source={require("../../images/Logo.png")}
         />
         <Text style={styles.title}>What is your role?</Text>
+      
       <TouchableOpacity  
         style={styles.card}
         // onPress={handleNavigateToCarrier}
@@ -63,8 +44,8 @@ const Welcome = () => {
       </TouchableOpacity> 
       <TouchableOpacity 
         style={styles.card2}
-        // onPress={handleNavigateToCostumer}>  
-        >
+        // onPress={handleNavigateToCostumer}
+      >
         
         <Image
           source={require("../../images/Costumer.png")}

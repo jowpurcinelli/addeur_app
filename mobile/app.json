@@ -1,0 +1,17 @@
+{
+  "name": "addeur",
+  "displayName": "Addeur",
+  "expo": {
+    "name": "Addeur",
+    "slug": "AddeurApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./images/Logo.png",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
