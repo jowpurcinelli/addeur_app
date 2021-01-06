@@ -57,7 +57,7 @@ const Order = () => {
             <Label>Pick up Location:</Label>
               <Input 
                 value={values.recipient_name}
-                onChangeText={text => setFieldValue('recipient_name', text)}
+                onChangeText={text => setFieldValue('location', text)}
               />
           </Item>
         </Form>  

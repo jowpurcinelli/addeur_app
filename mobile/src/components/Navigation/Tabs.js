@@ -7,7 +7,7 @@ import { useIsFocused } from '@react-navigation/native';
 
 // import {Home} from '../../pages/Costumer/Home';
 import {Welcome} from '../../pages/Welcome';
-import {Order} from '../../pages/Costumer/Order'
+import {Order} from '../../pages/Costumer/OrderCostumer'
 
 // import {icons} from '../../constants/icons';
 
@@ -30,6 +30,19 @@ const Tabs = () => {
         }}
       />      
 
+      <Tab.Screen
+        name="Order"
+        component={Order}
+        options={{
+          tabBarIcon:({focused}) => (
+            <Icon 
+              name='list-outline'
+              color={focused ? '#0382EB' : '#B8B8B8'}
+              size={26}
+            />
+          )
+        }}
+      />
       <Tab.Screen
         name="Order"
         component={Order}
