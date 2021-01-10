@@ -5,9 +5,10 @@ import { createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useIsFocused } from '@react-navigation/native';
 
-// import {Home} from '../../pages/Costumer/Home';
-import {Welcome} from '../../pages/Welcome';
-import {Order} from '../../pages/Costumer/OrderCostumer'
+import Home from '../../pages/Costumer/HomeCostumer'
+import Welcome from '../../pages/Welcome';
+import Order from '../../pages/Costumer/OrderCostumer';
+import Myinfo from '../../pages/Costumer/MyinfoCostumer';
 
 // import {icons} from '../../constants/icons';
 
@@ -15,7 +16,7 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <Tab.Navigator initialRouteName='Home' >
+    <Tab.Navigator initialRouteName='Order'>
       <Tab.Screen
         name="Home"
         component={Home}
@@ -28,7 +29,7 @@ const Tabs = () => {
             />
           )
         }}
-      />      
+      />   
 
       <Tab.Screen
         name="Order"
@@ -44,12 +45,12 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Order"
-        component={Order}
+        name="MyInfo"
+        component={Myinfo}
         options={{
           tabBarIcon:({focused}) => (
             <Icon 
-              name='list-outline'
+              name='person'
               color={focused ? '#0382EB' : '#B8B8B8'}
               size={26}
             />

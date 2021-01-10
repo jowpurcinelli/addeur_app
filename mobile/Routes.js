@@ -6,6 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Video from 'react-native-video';
 
 import Welcome from './src/pages/Welcome';
+import Order from './src/pages/Costumer/OrderCostumer';
+import Myinfo from './src/pages/Costumer/MyinfoCostumer';
+
 // import SplashScreen from "./images/SplashScreen.mp4";
 function SplashScreen({navigation}) {
   return(
@@ -24,6 +27,10 @@ export default function Routes() {
   <NavigationContainer>
     <Stack.Navigator initialRouteName="SplashScreen" headerMode="none">
       <Stack.Screen name="Welcome" component={Welcome}/>
+      <Stack.Screen name="Order" component={Order}/>
+      <Stack.Screen name="Myinfo" component={Myinfo}/>
+
+
     </Stack.Navigator>
   </NavigationContainer>
   )

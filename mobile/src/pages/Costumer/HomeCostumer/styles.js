@@ -6,7 +6,3 @@ export const Container = styled.View`
   }
 `;
 
-export const map: {
-  width: Dimensions.get('window').width,
-  height: Dimensions.get('window').height,
-},

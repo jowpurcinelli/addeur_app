@@ -7,6 +7,7 @@ import {SplashScreen} from './images/SplashScreen.mp4';
 
 import Welcome from './src/pages/Welcome';
 import Order from './src/pages/Costumer/OrderCostumer/index';
+import Myinfo from './src/pages/Costumer/MyinfoCostumer';
 import Tabs from './src/components/Navigation/Tabs';
 import Routes from './Routes';
 

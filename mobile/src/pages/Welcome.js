@@ -4,17 +4,18 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native';
 // import api from '../services/api';
 
 
-// import CostumerRoutes from '../components/Navigators/routes.costumer'
+import {Myinfo} from './Costumer/MyinfoCostumer';
+import {Order} from './Costumer/OrderCostumer';
 
 
 const Welcome = () => {
-  // const navigation = useNavigation();
-  // function handleNavigateToCarrier() {
-  //   navigation.navigate('')
-  // }
-  // function handleNavigateToCostumer() {
-  //   navigation.navigate('')
-  // }
+  const navigation = useNavigation();
+  function handleNavigateToCarrier() {
+    navigation.navigate('Myinfo')
+  }
+  function handleNavigateToCostumer() {
+    navigation.navigate('Order')
+  }
   return(
     <View style={{flex: 1}}>
       <ImageBackground
@@ -23,8 +24,6 @@ const Welcome = () => {
 
       >
       <View style={styles.container}>
-      
-    
         <Image
           style={styles.logo}
           source={require("../../images/Logo.png")}
@@ -33,7 +32,7 @@ const Welcome = () => {
       
       <TouchableOpacity  
         style={styles.card}
-        // onPress={handleNavigateToCarrier}
+        onPress={handleNavigateToCarrier}
       >  
           <Image
             source={require("../../images/Carrier.png")}
@@ -44,7 +43,7 @@ const Welcome = () => {
       </TouchableOpacity> 
       <TouchableOpacity 
         style={styles.card2}
-        // onPress={handleNavigateToCostumer}
+        onPress={handleNavigateToCostumer}
       >
         
         <Image
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     position: 'relative',
-    marginTop: 30,
+    marginTop: 50,
 
     
     
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
   card: {
     position: 'relative',
     fontFamily: 'Nunito_800ExtraBold',
-    marginTop: 30,
-    marginBottom: 30,
+    marginTop: 40,
+    marginBottom: 20,
     height:180,
     width: 280,
     fontSize: 16,
@@ -111,7 +110,7 @@ const styles = StyleSheet.create({
     card2: {
     position: 'relative',
     fontFamily: 'Nunito_800ExtraBold',
-    marginBottom: 50,
+    marginBottom: 60,
     height: 180,
     fontSize: 16,
     width: 280,
