@@ -5,6 +5,8 @@ import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Video from 'react-native-video';
 
+import Tabs from './src/components/Navigation/Tabs';
+
 import Welcome from './src/pages/Welcome';
 import Order from './src/pages/Costumer/OrderCostumer';
 import Myinfo from './src/pages/Costumer/MyinfoCostumer';
@@ -25,13 +27,7 @@ const Stack = createStackNavigator();
 export default function Routes() {
   return(
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="SplashScreen" headerMode="none">
-      <Stack.Screen name="Welcome" component={Welcome}/>
-      <Stack.Screen name="Order" component={Order}/>
-      <Stack.Screen name="Myinfo" component={Myinfo}/>
-
-
-    </Stack.Navigator>
+    <Tabs />
   </NavigationContainer>
   )
 }
