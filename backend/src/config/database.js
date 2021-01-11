@@ -1,9 +1,9 @@
 module.exports = {
-  dialect: 'sqlite',
+  dialect: 'postgres',
   host: 'localhost',
   username: 'postgres',
   password: 'addeur',
-  database: 'addeursqlite',
+  database: 'addeur',
   define: {
     timestamps: true,
     underscored: true,

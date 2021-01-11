@@ -5,6 +5,10 @@ class File extends Model {
     super.init({
       name: Sequelize.STRING,
       path: Sequelize.STRING,
+      url: Sequelize.VIRTUAL,
+      get() {
+        return `http://localhost:3333/files/${this.path}`;
+      },
     },
     {
       sequelize,
