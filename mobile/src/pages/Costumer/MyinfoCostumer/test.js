@@ -21,7 +21,7 @@
             />
 
 
-        <TouchableOpacity
+        <Button
           onPress={handleNavigateToCoupon}>
           <Icon 
             name='ellipse-outline'
@@ -36,7 +36,7 @@
               color={'#232D42'}
               size={26}
             />
-        </TouchableOpacity>
+        </Button>
     
         <TouchableOpacity
           onPress={handleNavigateToWallet}>

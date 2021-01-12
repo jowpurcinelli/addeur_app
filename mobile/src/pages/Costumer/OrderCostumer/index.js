@@ -101,11 +101,14 @@ const Order = () => {
                 <Input
                   value={values.product_weight}
                   onChangeText={text => setFieldValue('product_weight', text)}/>  
-                
+          </Item>
+          <Item>      
               <Label>Height</Label>
                 <Input
                   value={values.product_height}
                   onChangeText={text => setFieldValue('product_height', text)}/>
+          </Item>
+          <Item>
               <Label>Depth</Label>
                 <Input
                   value={values.product_depth}

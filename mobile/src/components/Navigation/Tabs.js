@@ -9,6 +9,7 @@ import Home from '../../pages/Costumer/HomeCostumer'
 import Welcome from '../../pages/Welcome';
 import Order from '../../pages/Costumer/OrderCostumer';
 import Myinfo from '../../pages/Costumer/MyinfoCostumer';
+import OrdersCostumer from '../../pages/Costumer/OrdersCostumer';
 
 // import {icons} from '../../constants/icons';
 
@@ -16,10 +17,10 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <Tab.Navigator initialRouteName='Order'>
+    <Tab.Navigator initialRouteName='Home'>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={Order}
         options={{
           tabBarIcon:({focused}) => (
             <Icon 
@@ -32,8 +33,8 @@ const Tabs = () => {
       />   
 
       <Tab.Screen
-        name="Order"
-        component={Order}
+        name="Orders"
+        component={OrdersCostumer}
         options={{
           tabBarIcon:({focused}) => (
             <Icon 
