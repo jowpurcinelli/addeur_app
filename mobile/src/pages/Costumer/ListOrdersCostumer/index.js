@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
-import { 
-  View,
-  ScrollView, 
-  StyleSheet, 
-  Switch, 
-  TextInput, 
-  TouchableOpacity, 
-  Image,
-  Text
-} from 'react-native';
+import { Text, ScrollView} from 'react-native';
+import {useFormik} from 'formik';
 
 import {useNavigation, useRoute} from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
 
-
+import { Button, Icon, List, ListItem } from '@ui-kitten/components';
 import { RectButton } from 'react-native-gesture-handler';
-import { Feather } from '@expo/vector-icons';
 
 import {Container} from './styles';
 import TruckIcon from '../../../../images/TruckIcon.svg';
-import {useFormik} from 'formik';
 
 
 
-const OrdersCostumer = () => {
+const data = new Array().fill({
+  title: {Order.id},
+  description: {Order.description},
+});
+
+const ListOrderssCostumer = () => {
+
+  const renderItem = ({ item, index }) => (
+    <ListItem
+      title={`${item.title} ${index + 1}`}
+      description={`${item.description} ${index + 1}`}
+    />
+  );
+
+
 
   return (
     <ScrollView style={{backgroundColor: '#f1f1f1'}}>
       <Container>
+        <TruckIcon />
         <Text>Booking ID 123456</Text>
        
       </Container>
@@ -42,4 +47,4 @@ const OrdersCostumer = () => {
 
 
 
-export default OrdersCostumer;
+export default ListOrdersCostumer;

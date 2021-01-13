@@ -123,6 +123,50 @@ const Order = () => {
           </Item>
         </Form>
       </Container>
+      
+      <Container>
+        <Text>Truck Type</Text>
+        <Form>
+          <Item>
+            <Label>Product Category</Label>
+              <Input
+                value={values.product_category}
+                onChangeText={text => setFieldValue('product_category', text)}/>  
+          </Item>
+          <Item>
+            <Label>Product Type</Label>
+              <Input
+                value={values.product_type}
+                onChangeText={text => setFieldValue('product_type', text)}/>  
+          </Item>
+          <Item>
+            <Label>Product Size</Label>
+              <Label>Weight</Label>
+                <Input
+                  value={values.product_weight}
+                  onChangeText={text => setFieldValue('product_weight', text)}/>  
+          </Item>
+          <Item>      
+              <Label>Height</Label>
+                <Input
+                  value={values.product_height}
+                  onChangeText={text => setFieldValue('product_height', text)}/>
+          </Item>
+          <Item>
+              <Label>Depth</Label>
+                <Input
+                  value={values.product_depth}
+                  onChangeText={text => setFieldValue('product_depth', text)}/>
+                
+          </Item>
+          <Item>
+            <Label>Product Value</Label>
+              <Input
+                value={values.product_value}
+                onChangeText={text => setFieldValue('product_value', text)}/>  
+          </Item>
+        </Form>
+      </Container>
     </ScrollView>
 
     
