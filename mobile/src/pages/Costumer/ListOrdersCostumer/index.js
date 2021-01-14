@@ -11,14 +11,18 @@ import { RectButton } from 'react-native-gesture-handler';
 import {Container} from './styles';
 import TruckIcon from '../../../../images/TruckIcon.svg';
 
+const Order = {
+  id: 'B345674',
+  description: 'La puta madre',
 
+};
 
-const data = new Array().fill({
-  title: {Order.id},
-  description: {Order.description},
-});
+// const data = new Array().fill({
+//   title: {Order.id},
+//   description: {Order.description}
+// });
 
-const ListOrderssCostumer = () => {
+function ListOrdersCostumer() {
 
   const renderItem = ({ item, index }) => (
     <ListItem

@@ -132,7 +132,7 @@ const Myinfo = () => {
       </Container>
 
       <TouchableOpacity
-        style={{borderRadius: 35, borderColor: '#FB5656', borderRadius: 20, height: 56, justifyContent: 'center'}}
+        style={{borderRadius: 25, borderWidth: 25 ,borderColor: '#FB5656', borderRadius: 20, height: 56, alignItems: 'center'}}
         onPress={handleNavigateToLogout}
       >
 
