@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, Image} from 'react-native';
 
 import { Container, Button, Text} from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import HeaderComponent from '../../../components/Header';
 
 
 const Myinfo = () => {
@@ -34,7 +35,31 @@ const Myinfo = () => {
   
   
   return(
-    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1}}>
+    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1, paddingTop: 15}}>
+      <HeaderComponent>
+        
+        <Text>My info</Text>
+        
+      </HeaderComponent> 
+        
+      
+      
+      <Container style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <Image 
+          source={require('../../../../images/userAvatar.png')}
+          style={{width: 60, height: 60, borderRadius: 40 }}
+          />
+        <Text
+          style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 10}}
+        >Torsten Paulsson</Text>
+        <Button
+          style={{alignItems: 'center', justifyContent: 'center', paddingLeft: 20}}>
+          <Text>Edit</Text>
+        </Button>
+      </Container>
+      
+      
+      
       <Container>
         <Button
           onPress={handleNavigateToPoints}>
@@ -54,7 +79,7 @@ const Myinfo = () => {
         <Button
           onPress={handleNavigateToCoupon}>
           <Icon 
-            name='ellipse-outline'
+            name='pricetags-outline'
             //albums-outline
             color={'#232D42'}
             size={26}
@@ -72,7 +97,7 @@ const Myinfo = () => {
           onPress={handleNavigateToWallet}>
 
           <Icon 
-            name='wallet'
+            name='wallet-outline'
             color={'#232D42'}
             size={26}
           />
@@ -132,7 +157,7 @@ const Myinfo = () => {
       </Container>
 
       <TouchableOpacity
-        style={{borderRadius: 25, borderWidth: 25 ,borderColor: '#FB5656', borderRadius: 20, height: 56, alignItems: 'center'}}
+        style={{borderRadius: 25, borderWidth: 3 ,borderColor: '#FB5656', height: 55, width: 225, alignItems: 'center', justifyContent: 'center'}}
         onPress={handleNavigateToLogout}
       >
 

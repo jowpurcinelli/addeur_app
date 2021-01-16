@@ -176,7 +176,7 @@ const Order = () => {
                 onChangeText={text => setFieldValue('product_height', text)}              
                 leftIcon={
                   <Icon
-                    name='fa-text-height'
+                    name='text-height'
                     size={24}
                   />
                 }/>

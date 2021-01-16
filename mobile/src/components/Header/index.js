@@ -1,27 +1,32 @@
 import React from "react";
+import {useNavigation} from '@react-navigation/native';
 import { Text, Image } from "react-native";
 import { Header, Left, Body, Right, Button} from "native-base";
 import Icon from "react-native-vector-icons/FontAwesome";
+import ColoredLogo from '../Icons/ColoredLogo';
 import styles from "./styles";
 
-export const HeaderComponent =  ({logo})=>{
+function HeaderComponent({title}) {
+	const navigation = useNavigation();
+
+	function HandleGoMessages() {
+		navigation.navigate('Messages')
+	}
 	return (
-		<Header style={{backgroundColor:"white"}} iosBarStyle="light-content">
+		<Header style={{backgroundColor:"white", flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}} iosBarStyle="dark-content">
 			<Left>
-				<Button transparent>
+				<Button transparent onPress={navigation.goBack}>
 					<Icon name="chevron-left" style={styles.icon} />
 				</Button>
 			</Left>
-			<Body>{logo &&
-					<Image resizeMode="contain" style={styles.logo} source={logo}/>
-					||
-					<Text style={styles.headerText}></Text>
-				}
+			<Body>
+				<Image source={require('../../../images/logo.png')} />
+					<Text style={styles.headerText}>{title}</Text>
 			</Body>
 
 			<Right>
 				<Button transparent>
-					<Icon name="gift" style={styles.icon} />
+					<Icon name="comments" style={styles.icon} />
 				</Button>
 			</Right>
 		</Header>

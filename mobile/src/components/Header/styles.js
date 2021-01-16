@@ -7,11 +7,12 @@ const styles = StyleSheet.create({
 	},
 	headerText:{
 		color:"black",
-		fontSize:14
+		fontSize:16
 	},
 	logo:{
 		width:50,
-		height:50
+		height:50,
+		fontSize: 10,
 	}
 
 });

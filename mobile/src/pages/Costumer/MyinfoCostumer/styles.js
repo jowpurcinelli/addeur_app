@@ -18,6 +18,8 @@ export const Button = styled.TouchableOpacity`
 `;
 export const Text = styled.Text`
   font-size: 16;
+  font-weight: 500;
+  color: grey;
   line-Height: 15;
-  margin-Top: 2;  
+  margin-Top: 12;  
 `;
