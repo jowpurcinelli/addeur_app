@@ -39,7 +39,7 @@ const Myinfo = () => {
 
 
   return(
-    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1, paddingTop: 25}}>
+    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1 }}>
       <HeaderComponent title="My info">
         
         <Text>My info</Text>
@@ -160,7 +160,7 @@ const Myinfo = () => {
       </Container>
 
       <TouchableOpacity
-        style={{borderRadius: 25, borderWidth: 3 ,borderColor: '#FB5656', height: 55, width: 225, alignItems: 'center', justifyContent: 'center'}}
+        style={{flex: 1, marginTop: 20,borderRadius: 25, borderWidth: 3 ,borderColor: '#FB5656', height: 55, width: 225, alignSelf: 'center', alignItems: 'center', justifyContent: 'center'}}
         onPress={handleNavigateToLogout}
       >
 
@@ -168,6 +168,7 @@ const Myinfo = () => {
 
       </TouchableOpacity>
     </ScrollView>
+    
   )
 }
 

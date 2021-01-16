@@ -9,7 +9,7 @@ import {
   
 } from 'react-native';
 import {View, Text, Form, Label, Item} from 'native-base';
-import { Input, Icon } from 'react-native-elements';
+import { Input } from 'react-native-elements';
 import SelectPicker from 'react-native-form-select-picker'; 
 // import SwitchSelector from 'react-native-switch-selector';
 
@@ -19,9 +19,8 @@ import { TextInputMask } from 'react-native-masked-text';
 // import OrderDetailsButton from '../../components/OrderDetailsButton';
 // import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
-import { Feather } from '@expo/vector-icons';
-
-import {Container} from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {Container, Title} from './styles';
 import TruckIcon from '../../../components/Icons/TruckIcon';
 import {useFormik} from 'formik';
 import WaitinIcon from '../../../components/Icons/WaitinIcon';
@@ -59,29 +58,25 @@ const Order = () => {
 
   return (
     <ScrollView style={{backgroundColor: '#f1f1f1'}}>
-      <Container>
-        <HeaderComponent title={"Details filling"} />
-      </Container>
-      
-      
-      
+      <HeaderComponent title={"Details filling"}  />
       <Container >
         
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 10, paddingHorizontal: 10, paddingTop: 10}}>
-            <Text>Your Address</Text>
-            <TruckIcon />
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 30, paddingHorizontal: 10, paddingTop: 10}}>
+            <Text> Your Address</Text>
+            <TruckIcon  />
             <WaitinIcon />
             
         </View>
         <Form>
           <Item>
             <Input 
-              value={values.recipient_name}
+              value={values.pickup_location}
               placeholder='Pick up Location:' 
               onChangeText={text => setFieldValue('pickup_location', text)}              
               leftIcon={
                 <Icon
-                  name=''
+                  name='arrow-up-circle'
+                  style={{color: '#53D289'}}
                   size={24}
                 />
               }
@@ -90,10 +85,17 @@ const Order = () => {
           
           <Item>
             <Input   
-                placeholder='Destination:' 
-                value={values.destination}
-                onChangeText={text => setFieldValue('destination', text)}
-              />
+              placeholder='Destination:' 
+              value={values.destination}
+              onChangeText={text => setFieldValue('destination', text)}
+              leftIcon={
+                <Icon
+                  name='disc-sharp'
+                  size={24}
+                  style={{color: '#FB5656'}}
+                />
+              }  
+            />
           </Item>
         </Form>  
       </Container>
@@ -106,7 +108,7 @@ const Order = () => {
                 onChangeText={text => setFieldValue('recipient_name', text)}              
                 leftIcon={
                   <Icon
-                    name=''
+                    name='person-outline'
                     size={24}
                   />
                 }
@@ -119,7 +121,7 @@ const Order = () => {
                 onChangeText={text => setFieldValue('recipient_contact', text)}              
                 leftIcon={
                   <Icon
-                    name=''
+                    name='call-outline'
                     size={24}
                   />
                 }
@@ -128,9 +130,11 @@ const Order = () => {
         </Form>  
       </Container>
       <Container>
-        <Text>
-          Product Details
-        </Text>
+        <View>
+          <Text>
+            Product Details
+          </Text>
+        </View>  
         <Form>
           <Item>
               <Input  

@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
 
   title: {
     position: 'relative',
-    fontFamily: 'Noto Sans',
     textAlign: 'auto',
     fontSize: 24,
     color: 'white',
