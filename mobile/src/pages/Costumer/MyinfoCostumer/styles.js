@@ -23,3 +23,9 @@ export const Text = styled.Text`
   line-Height: 15;
   margin-Top: 12;  
 `;
+export const Avatar = styled.Image`
+  width: 60;
+  height: 60;
+  border-radius: 30; 
+
+`

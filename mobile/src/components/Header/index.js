@@ -19,8 +19,8 @@ function HeaderComponent({title}) {
 					<Icon name="chevron-left" style={styles.icon} />
 				</Button>
 			</Left>
-			<Body>
-				<Image source={require('../../../images/logo.png')} />
+			<Body style={{ paddingRight: 55, flexDirection: 'row'}}>
+				<Image source={require('../../../images/coloredlogo.png')} style={{ width: 32, height: 34, resizeMode: 'contain'}} />
 					<Text style={styles.headerText}>{title}</Text>
 			</Body>
 

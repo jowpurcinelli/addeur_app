@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Image} from 'react-native';
 
-import { Container, Button, Text} from './styles';
+import { Container, Button, Text, Avatar} from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
@@ -33,10 +33,14 @@ const Myinfo = () => {
     navigation.navigate('Logout')
   }
   
-  
+  // const profile = useSelector(state => state.user.profile);
+  // const dispatch = useDispatch();
+
+
+
   return(
-    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1, paddingTop: 15}}>
-      <HeaderComponent>
+    <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1, paddingTop: 25}}>
+      <HeaderComponent title="My info">
         
         <Text>My info</Text>
         
@@ -45,16 +49,15 @@ const Myinfo = () => {
       
       
       <Container style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Image 
+        <Avatar 
           source={require('../../../../images/userAvatar.png')}
-          style={{width: 60, height: 60, borderRadius: 40 }}
           />
-        <Text
-          style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 10}}
-        >Torsten Paulsson</Text>
+        <Text style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 20}}>
+          Torsten Paulsson
+        </Text>
         <Button
-          style={{alignItems: 'center', justifyContent: 'center', paddingLeft: 20}}>
-          <Text>Edit</Text>
+          style={{alignItems: 'center', justifyContent: 'center', paddingLeft: 45}}>
+          <Text style={{color: '#0382EB'}}>Edit</Text>
         </Button>
       </Container>
       

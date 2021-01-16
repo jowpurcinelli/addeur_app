@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
 	},
 	headerText:{
 		color:"black",
-		fontSize:16
+		fontSize:18,
+		fontWeight: '700',
+		paddingLeft: 10
 	},
 	logo:{
 		width:50,

@@ -60,7 +60,7 @@ const Order = () => {
   return (
     <ScrollView style={{backgroundColor: '#f1f1f1'}}>
       <Container>
-        <HeaderComponent />
+        <HeaderComponent title={"Details filling"} />
       </Container>
       
       
