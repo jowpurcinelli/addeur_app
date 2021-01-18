@@ -1,9 +1,9 @@
 {
-  "name": "addeur",
+  "name": "Addeur",
   "displayName": "Addeur",
   "expo": {
-    "name": "Addeur",
-    "slug": "AddeurApp",
+    "name": "AddeurApp",
+    "slug": "Addeur",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./images/Logo.png",

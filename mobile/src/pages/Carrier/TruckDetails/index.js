@@ -36,6 +36,7 @@ const Myinfo = () => {
   // const profile = useSelector(state => state.user.profile);
   // const dispatch = useDispatch();
 
+
   const user = {
     id: 10,
     name: '',
@@ -59,10 +60,13 @@ const Myinfo = () => {
       
       <Container style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Avatar 
-          source={user.avatar}
+          source={require('../../../../images/userAvatar.png')}
           />
-        <Text style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 20}}>
-         {user.name}
+        <Text 
+          style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 20}}
+          >
+            {user.name}
+          
         </Text>
         <Button
           style={{alignItems: 'center', justifyContent: 'center', paddingLeft: 45}}>

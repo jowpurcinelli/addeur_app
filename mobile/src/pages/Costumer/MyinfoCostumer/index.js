@@ -42,7 +42,6 @@ const Myinfo = () => {
     <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1 }}>
       <HeaderComponent title="My info">
         
-        <Text>My info</Text>
         
       </HeaderComponent> 
         
