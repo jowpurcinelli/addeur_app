@@ -51,7 +51,7 @@ const Myinfo = () => {
 
   return(
     <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1 }}>
-      <HeaderComponent title="My info">
+      <HeaderComponent title="Manage my Trucks">
         
         
       </HeaderComponent> 
