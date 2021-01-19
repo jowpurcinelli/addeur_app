@@ -6,7 +6,7 @@ import {
 import cn from 'date-fns/locale/zh-CN';
 import Order from '../models/Order';
 import User from '../models/User';
-// import File from '../models/File';
+import File from '../models/File';
 // import Notification from '../schemas/Notification';
 // import CancellationMail from '../jobs/CancellationMail';
 // import Queue from '../../lib/Queue';

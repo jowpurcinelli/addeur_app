@@ -9,9 +9,11 @@ import {Order} from './Costumer/OrderCostumer';
 
 
 const Welcome = () => {
+  
   const navigation = useNavigation();
+
   function handleNavigateToCarrier() {
-    navigation.navigate('Myinfo')
+    navigation.navigate('MyinfoCostumer')
   }
   function handleNavigateToCostumer() {
     navigation.navigate('Order')

@@ -22,8 +22,8 @@ export const Text = styled.Text`
   color: grey;
 `;
 export const Avatar = styled.Image`
-  width: 60;
-  height: 60;
-  border-radius: 30; 
+  width: 60px;
+  height: 60px;
+  border-radius: 30px; 
 
 `

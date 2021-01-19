@@ -26,7 +26,13 @@ const Stack = createStackNavigator();
 
 export default function Routes() {
   return(
+
   <NavigationContainer>
+    <Stack.Screen
+      name={Welcome}
+      component={Welcome}>
+
+    </Stack.Screen>
     <Tabs />
   </NavigationContainer>
   )

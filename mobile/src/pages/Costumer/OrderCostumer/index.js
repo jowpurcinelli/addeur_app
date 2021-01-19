@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { 
   ScrollView, 
   StyleSheet, 
@@ -6,12 +6,14 @@ import {
   TextInput, 
   TouchableOpacity, 
   Image,
+  Button
   
 } from 'react-native';
 import {View, Text, Form, Label, Item} from 'native-base';
 import { Input } from 'react-native-elements';
+import SelectMultiple from 'react-native-select-multiple'
 import SelectPicker from 'react-native-form-select-picker'; 
-// import SwitchSelector from 'react-native-switch-selector';
+import SwitchSelector from "react-native-switch-selector";
 
 import {useNavigation, useRoute} from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
@@ -31,8 +33,16 @@ import HeaderComponent from '../../../components/Header';
 
 
 
+
+
+
 const Order = () => {
- //   const [images, setImages] = useState<string[]>([]);  
+ //   const [images, setImages] = useState<string[]>([]); 
+ 
+ 
+  const [truckSize, setTruckSize] = useState(["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters"]);
+  const [truckType, setTruckType] = useState(["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"])
+
  const {values, isSubmitting, setFieldValue} = useFormik({
     initialValues: {
       pickup_location: '',
@@ -46,14 +56,13 @@ const Order = () => {
       product_depth: '',
       product_style: '',
       product_value: '',
-      truck_size: ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ],
-      truck_type: ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"],
     },
     onSubmit: values => {
 
     },
   })
-  const [selected, setSelected] = useState();
+
+
   //const truckSize = ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ]; 
   //const truckType = ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"];
  
@@ -232,14 +241,20 @@ const Order = () => {
           </Item>
         </Form>
       </Container>
+      
+      
       <Container >
-        <Title>Select Truck</Title>
-          <Picker>
-            <Text>Van</Text>
-          
-          
-          </Picker> 
-
+        <Title>Select Truck</Title>          
+        <SwitchSelector
+          onPress={value => this.setState({ gender: value })}
+          textColor={'#F2F2F2'} 
+          selectedColor={colors.white}
+          buttonColor={'#66CC7D'}
+          hasPadding
+          options={[
+            { label: "Feminino", value: "f", imageIcon: images.feminino }, //images.feminino = require('./path_to/assets/img/feminino.png')
+            { label: "Masculino", value: "m", imageIcon: images.masculino } //images.masculino = require('./path_to/assets/img/masculino.png')
+          ]}
             
   
           

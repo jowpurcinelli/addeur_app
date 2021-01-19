@@ -1,70 +1,81 @@
-import React, {useState, useEffect} from 'react';
-import {} from 'react-native';
+import React, { useState, Component } from 'react';
+import { 
+  ScrollView, 
+  StyleSheet, 
+  Switch, 
+  TextInput, 
+  TouchableOpacity, 
+  Image,
+  
+} from 'react-native';
+import {View, Text, Form, Label, Item} from 'native-base';
+import { Input } from 'react-native-elements';
+import SelectPicker from 'react-native-form-select-picker'; 
+// import SwitchSelector from 'react-native-switch-selector';
 
-const {values, isSubmitting, setFieldValue} = useFormik({
-  initialValues: {
-    registration_number: '',
-    driving_years: '',
-    license_plate_color: '',
-    manufacture_date: '',
-    loading_capacity: '',
-    truck_brand: '',
-    truck_model:'',
-    carriage_length: '',
-    truck_type: '',
-    product_style: '',
-    truck_requirement: '',
-    truck_size: ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ],
-    truck_type: ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"],
-  },
-  onSubmit: values => {
+import {useNavigation, useRoute} from '@react-navigation/native';
+import { TextInputMask } from 'react-native-masked-text';
 
-  },
-})
-const [selected, setSelected] = useState();
-//const truckSize = ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ]; 
-//const truckType = ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"];
 
-const AddNewTruck = () => {    
-  const {values, isSubmitting, setFieldValue} = useFormik({
+import {Container, Title, Picker} from './styles';
+
+
+// import OrderDetailsButton from '../../components/OrderDetailsButton';
+// import CheckBox from '../../components/CheckBox';
+import { RectButton } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/Ionicons';
+import TruckIcon from '../../../components/Icons/TruckIcon';
+import {useFormik} from 'formik';
+import WaitinIcon from '../../../components/Icons/WaitinIcon';
+import HeaderComponent from '../../../components/Header';
+
+
+
+const Order = () => {
+ //   const [images, setImages] = useState<string[]>([]);  
+ const {values, isSubmitting, setFieldValue} = useFormik({
     initialValues: {
-      registration_number: '',
-      driving_years: '',
-      license_plate_color: '',
-      manufacture_date: '',
-      loading_capacity: '',
-      truck_brand: '',
-      truck_model:'',
-      carriage_length: '',
-      truck_type: '',
+      pickup_location: '',
+      destination: '',
+      recipient_name: '',
+      recipient_contact: '',
+      product_category: '',
+      product_type: '',
+      product_width:'',
+      product_height: '',
+      product_depth: '',
       product_style: '',
-      truck_requirement: '',
+      product_value: '',
       truck_size: ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ],
       truck_type: ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"],
     },
     onSubmit: values => {
-  
+
     },
   })
   const [selected, setSelected] = useState();
-  
-  
-  
-  
-  return(
+  //const truckSize = ["3.8 miters", "4.2 miters", "6.8 miters", "7.6 miters", "9.6 miters", "13 miters","17.5 miters", "20 miters" ]; 
+  //const truckType = ["Cold-Chain", "Container", "Platform", "Van", "Fence", "Insulated", "Two-Decks", "Ledder", "Gliders"];
+ 
+
+
+  return (
     <ScrollView style={{backgroundColor: '#f1f1f1'}}>
       <HeaderComponent title={"Details filling"}  />
       <Container >
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 30, paddingHorizontal: 10, paddingTop: 10}}>
-            <Text> Your Address</Text>
+        
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, paddingTop: 10}}>
+            <Title style={{paddingRight: 50,marginRight: 40}}> Your Address</Title>
             <TruckIcon  />
             <WaitinIcon />
             
         </View>
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
             <Input 
+              style={{borderRadius: 0}}
               value={values.pickup_location}
+              returnKeyType={'done'}
               placeholder='Pick up Location:' 
               onChangeText={text => setFieldValue('pickup_location', text)}              
               leftIcon={
@@ -77,10 +88,11 @@ const AddNewTruck = () => {
             />
           </Item>  
           
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
             <Input   
               placeholder='Destination:' 
               value={values.destination}
+              returnKeyType={'done'}
               onChangeText={text => setFieldValue('destination', text)}
               leftIcon={
                 <Icon
@@ -95,10 +107,11 @@ const AddNewTruck = () => {
       </Container>
       <Container>
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input 
                 placeholder='Recipient Name'
                 value={values.recipient_name}
+                returnKeyType={'done'}
                 onChangeText={text => setFieldValue('recipient_name', text)}              
                 leftIcon={
                   <Icon
@@ -108,10 +121,11 @@ const AddNewTruck = () => {
                 }
               />
           </Item>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input 
                 placeholder='Recipient Contact'
                 value={values.recipient_contact}
+                returnKeyType={'done'}
                 onChangeText={text => setFieldValue('recipient_contact', text)}              
                 leftIcon={
                   <Icon
@@ -125,129 +139,100 @@ const AddNewTruck = () => {
       </Container>
       <Container>
         <View>
-          <Text>
+          <Title>
             Product Details
-          </Text>
+          </Title>
         </View>  
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product Category:' 
+                placeholder='Product Category' 
+                returnKeyType={'done'}
                 value={values.product_category}
                 onChangeText={text => setFieldValue('product_category', text)}              
                 leftIcon={
                   <Icon
-                    name=''
+                    name='cube-outline'
                     size={24}
                   />
                 }/>  
           </Item>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product Type:' 
+                placeholder='Product Type' 
                 value={values.product_type}
-                onChangeText={text => setFieldValue('product_type', text)}              
+                onChangeText={text => setFieldValue('product_type', text)} 
+                returnKeyType={'done'}                             
                 leftIcon={
                   <Icon
-                    name=''
+                    name='cube'
                     size={24}
                   />
                 }/>  
           </Item>
-          <Item>
-            <Label></Label>
-                <Input  
-                  placeholder='Width:' 
-                  value={values.product_width}
-                  onChangeText={text => setFieldValue('product_width', text)}              
+          <Title>Product Size</Title>
+            <Item 
+              style={{flexDirection: "column", marginLeft: 160, borderColor: 'transparent'}}>
+                
+                
+                <Input 
+                  style={{marginLeft: 50}}  
+                  placeholder='20m' 
+                  maxHeight={3}
+                  keyboardType={'numeric'}
+                  returnKeyType={'done'}
+                  value={values.product_height}
+                  onChangeText={text => setFieldValue('product_height', text)}              
                   leftIcon={
-                    <Icon
-                      name='width'
-                      size={24}
-                    />
+                    <Text style={{paddingLeft: -40}}>Height</Text>
+                      
+                    
                   }/>  
-          </Item>
-          <Item>      
+     
               <Input  
-                placeholder='Height:' 
-                value={values.product_height}
-                onChangeText={text => setFieldValue('product_height', text)}              
+                style={{marginLeft: 50}}  
+                placeholder='10m'
+                keyboardType={'numeric'}
+                returnKeyType={'done'} 
+                maxHeight={3}
+                value={values.product_width}
+                onChangeText={text => setFieldValue('product_width', text)}              
                 leftIcon={
-                  <Icon
-                    name='text-height'
-                    size={24}
-                  />
+                  <Text style={{paddingLeft: -40}}>Width</Text>
+                    
+                  
                 }/>
-          </Item>
-          <Item>
+
               <Input  
-                placeholder='Depth:' 
+                style={{marginLeft: 50}}  
+                placeholder='20m' 
+                keyboardType={'numeric'}
+                returnKeyType={'done'}
+                maxHeight={3}
                 value={values.product_depth}
                 onChangeText={text => setFieldValue('product_depth', text)}              
                 leftIcon={
-                  <Icon
-                    name='depth'
-                    size={24}
-                  />
+                  <Text style={{paddingLeft: -40}}>Depth</Text>
+                    
+                  
                 }/>
                 
           </Item>
-          <Item>
-            
+          <Title>Product Value</Title>
+
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product value:' 
+                placeholder='Enter actual value' 
+                keyboardType={'numeric'}
+                returnKeyType={'done'}
                 value={values.product_value}
                 onChangeText={text => setFieldValue('product_value', text)}
-                label={'Enter actual Value'}
+
                 />  
           </Item>
         </Form>
       </Container>
-      
-      <Container>
-        <Text>Select Truck</Text>
-          <Form
-            style={{justifyContent: "space-between", padding: 30}}>
-          <Item>    
-            <SelectPicker  
-              style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#66cc7d', borderRadius: 20, height: 50, width: 220}}
-              onValueChange={(value) => {
-                setSelected(values.truck_size);
-              }}
-              selected={selected}
-              placeholder={"Please select a Truck Size"}
-              doneButtonText={"Set truck size"}
-              
-            >
-            
-              {Object.values(values.truck_size).map((val, index) => (
-                <SelectPicker.Item label={val} value={val} key={index} />
-              ))}
- 
-            </SelectPicker>
-          </Item>
-          <Item>  
-            
-            <SelectPicker
-              style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#66cc7d', borderRadius: 20, height: 50, width: 220}}
-              onValueChange={(value) => {
-                setSelected(values.truck_type);
-              }}
-              selected={selected}
-              placeholder={"Please select a Truck Type"}
-              doneButtonText={"Set truck type"}
-            >
-            
-              {Object.values(values.truck_type).map((val, index) => (
-                  <SelectPicker.Item label={val} value={val} key={index} />
-              ))}
- 
-            </SelectPicker>    
-          </Item>
-          
-          </Form>
 
-      </Container>
     </ScrollView>
 
     
