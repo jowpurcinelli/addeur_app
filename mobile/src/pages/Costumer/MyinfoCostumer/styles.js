@@ -17,7 +17,7 @@ export const Button = styled.TouchableOpacity`
   padding: 5px;
 `;
 export const Text = styled.Text`
-  font-size: 16;
+  font-size: 16px;
   font-weight: 500;
   color: grey;
 `;

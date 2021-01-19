@@ -16,11 +16,14 @@ import SelectPicker from 'react-native-form-select-picker';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
 
+
+import {Container, Title, Picker} from './styles';
+
+
 // import OrderDetailsButton from '../../components/OrderDetailsButton';
 // import CheckBox from '../../components/CheckBox';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Container, Title} from './styles';
 import TruckIcon from '../../../components/Icons/TruckIcon';
 import {useFormik} from 'formik';
 import WaitinIcon from '../../../components/Icons/WaitinIcon';
@@ -61,16 +64,18 @@ const Order = () => {
       <HeaderComponent title={"Details filling"}  />
       <Container >
         
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 30, paddingHorizontal: 10, paddingTop: 10}}>
-            <Text> Your Address</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, paddingTop: 10}}>
+            <Title style={{paddingRight: 50,marginRight: 40}}> Your Address</Title>
             <TruckIcon  />
             <WaitinIcon />
             
         </View>
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
             <Input 
+              style={{borderRadius: 0}}
               value={values.pickup_location}
+              returnKeyType={'done'}
               placeholder='Pick up Location:' 
               onChangeText={text => setFieldValue('pickup_location', text)}              
               leftIcon={
@@ -83,10 +88,11 @@ const Order = () => {
             />
           </Item>  
           
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
             <Input   
               placeholder='Destination:' 
               value={values.destination}
+              returnKeyType={'done'}
               onChangeText={text => setFieldValue('destination', text)}
               leftIcon={
                 <Icon
@@ -101,10 +107,11 @@ const Order = () => {
       </Container>
       <Container>
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input 
                 placeholder='Recipient Name'
                 value={values.recipient_name}
+                returnKeyType={'done'}
                 onChangeText={text => setFieldValue('recipient_name', text)}              
                 leftIcon={
                   <Icon
@@ -114,10 +121,11 @@ const Order = () => {
                 }
               />
           </Item>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input 
                 placeholder='Recipient Contact'
                 value={values.recipient_contact}
+                returnKeyType={'done'}
                 onChangeText={text => setFieldValue('recipient_contact', text)}              
                 leftIcon={
                   <Icon
@@ -131,127 +139,110 @@ const Order = () => {
       </Container>
       <Container>
         <View>
-          <Text>
+          <Title>
             Product Details
-          </Text>
+          </Title>
         </View>  
         <Form>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product Category:' 
+                placeholder='Product Category' 
+                returnKeyType={'done'}
                 value={values.product_category}
                 onChangeText={text => setFieldValue('product_category', text)}              
                 leftIcon={
                   <Icon
-                    name=''
+                    name='cube-outline'
                     size={24}
                   />
                 }/>  
           </Item>
-          <Item>
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product Type:' 
+                placeholder='Product Type' 
                 value={values.product_type}
-                onChangeText={text => setFieldValue('product_type', text)}              
+                onChangeText={text => setFieldValue('product_type', text)} 
+                returnKeyType={'done'}                             
                 leftIcon={
                   <Icon
-                    name=''
+                    name='cube'
                     size={24}
                   />
                 }/>  
           </Item>
-          <Item>
-            <Label></Label>
-                <Input  
-                  placeholder='Width:' 
-                  value={values.product_width}
-                  onChangeText={text => setFieldValue('product_width', text)}              
+          <Title>Product Size</Title>
+            <Item 
+              style={{flexDirection: "column", marginLeft: 160, borderColor: 'transparent'}}>
+                
+                
+                <Input 
+                  style={{marginLeft: 50}}  
+                  placeholder='20m' 
+                  maxHeight={3}
+                  keyboardType={'numeric'}
+                  returnKeyType={'done'}
+                  value={values.product_height}
+                  onChangeText={text => setFieldValue('product_height', text)}              
                   leftIcon={
-                    <Icon
-                      name='width'
-                      size={24}
-                    />
+                    <Text style={{paddingLeft: -40}}>Height</Text>
+                      
+                    
                   }/>  
-          </Item>
-          <Item>      
+     
               <Input  
-                placeholder='Height:' 
-                value={values.product_height}
-                onChangeText={text => setFieldValue('product_height', text)}              
+                style={{marginLeft: 50}}  
+                placeholder='10m'
+                keyboardType={'numeric'}
+                returnKeyType={'done'} 
+                maxHeight={3}
+                value={values.product_width}
+                onChangeText={text => setFieldValue('product_width', text)}              
                 leftIcon={
-                  <Icon
-                    name='text-height'
-                    size={24}
-                  />
+                  <Text style={{paddingLeft: -40}}>Width</Text>
+                    
+                  
                 }/>
-          </Item>
-          <Item>
+
               <Input  
-                placeholder='Depth:' 
+                style={{marginLeft: 50}}  
+                placeholder='20m' 
+                keyboardType={'numeric'}
+                returnKeyType={'done'}
+                maxHeight={3}
                 value={values.product_depth}
                 onChangeText={text => setFieldValue('product_depth', text)}              
                 leftIcon={
-                  <Icon
-                    name='depth'
-                    size={24}
-                  />
+                  <Text style={{paddingLeft: -40}}>Depth</Text>
+                    
+                  
                 }/>
                 
           </Item>
-          <Item>
-            
+          <Title>Product Value</Title>
+
+          <Item style={{borderColor: 'transparent'}}>
               <Input  
-                placeholder='Product value:' 
+                placeholder='Enter actual value' 
+                keyboardType={'numeric'}
+                returnKeyType={'done'}
                 value={values.product_value}
                 onChangeText={text => setFieldValue('product_value', text)}
-                label={'Enter actual Value'}
+
                 />  
           </Item>
         </Form>
       </Container>
-      
-      <Container>
-        <Text>Select Truck</Text>
-          <Form
-            style={{justifyContent: "space-between", padding: 30}}>
-          <Item>    
-            <SelectPicker  
-              style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#66cc7d', borderRadius: 20, height: 50, width: 220}}
-              onValueChange={(value) => {
-                setSelected(values.truck_size);
-              }}
-              selected={selected}
-              placeholder={"Please select a Truck Size"}
-              doneButtonText={"Set truck size"}
-              
-            >
-            
-              {Object.values(values.truck_size).map((val, index) => (
-                <SelectPicker.Item label={val} value={val} key={index} />
-              ))}
- 
-            </SelectPicker>
-          </Item>
-          <Item>  
-            
-            <SelectPicker
-              style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#66cc7d', borderRadius: 20, height: 50, width: 220}}
-              onValueChange={(value) => {
-                setSelected(values.truck_type);
-              }}
-              selected={selected}
-              placeholder={"Please select a Truck Type"}
-              doneButtonText={"Set truck type"}
-            >
-            
-              {Object.values(values.truck_type).map((val, index) => (
-                  <SelectPicker.Item label={val} value={val} key={index} />
-              ))}
- 
-            </SelectPicker>    
-          </Item>
+      <Container >
+        <Title>Select Truck</Title>
+          <Picker>
+            <Text>Van</Text>
           
-          </Form>
+          
+          </Picker> 
+
+            
+  
+          
 
       </Container>
     </ScrollView>

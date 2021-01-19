@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, ScrollView, Image} from 'react-native';
+import {View, ScrollView, Image, Text} from 'react-native';
 
-import { Container, Button, Text, Avatar} from './styles';
+import { Container, Button, Avatar} from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
@@ -40,12 +40,7 @@ const Myinfo = () => {
 
   return(
     <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1 }}>
-      <HeaderComponent title="My info">
-        
-        
-      </HeaderComponent> 
-        
-      
+      <HeaderComponent title="My info" />
       
       <Container style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Avatar 
