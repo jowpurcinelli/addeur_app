@@ -3,19 +3,18 @@ import { View, StyleSheet, Dimensions, Text } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
+
 import MapView, { Marker, MapEvent } from 'react-native-maps';
 
 import mapMarkerImg from '../../../images/MapMarkerCostumer.png';
 
 export default function SelectMapPosition() {
     const navigation = useNavigation();
-
     const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
-
     function handleNextStep() {
         navigation.navigate('CarrierData', { position });
     }
-
+   
     function handleSelectMapPosition(event) {
         setPosition(event.nativeEvent.coordinate);
     }
