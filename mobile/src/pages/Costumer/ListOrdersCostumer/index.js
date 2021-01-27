@@ -12,8 +12,8 @@ import {Container} from './styles';
 import TruckIcon from '../../../components/Icons/TruckIcon';
 
 const Order = {
-  id: 'B345674',
-  description: 'La puta madre',
+  id: '',
+  description: '',
 
 };
 
@@ -35,7 +35,7 @@ const ListOrdersCostumer = ({item, index}) => {
     <ScrollView>
       <Container>
         <TruckIcon />
-        <Text>Booking ID 123456</Text>
+  <Text>Booking ID {Order.id}</Text>
         <View style={{flexDirection: 'row', alignItems: 'right'}}>
           <Button appearance='outline'></Button>
 
