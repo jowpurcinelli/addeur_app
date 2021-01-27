@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, ScrollView, Image} from 'react-native';
+import {View, ScrollView, Image, Text} from 'react-native';
 
-import { Container, Button, Text, Avatar} from './styles';
+import { Container, Button, Avatar} from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
@@ -36,6 +36,7 @@ const Myinfo = () => {
   // const profile = useSelector(state => state.user.profile);
   // const dispatch = useDispatch();
 
+
   const user = {
     id: 10,
     name: '',
@@ -45,24 +46,20 @@ const Myinfo = () => {
       truck_size: '',
 
     }
+  };
 
-  }
+  
 
   return(
     <ScrollView style={{backgroundColor: '#F2F2F2', flex: 1 }}>
-      <HeaderComponent title="My info">
-        
-        
-      </HeaderComponent> 
-        
-      
+      <HeaderComponent title="My info" />
       
       <Container style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Avatar 
-          source={user.avatar}
+          source={require('../../../../images/userAvatar.png')}
           />
         <Text style={{color: 'black', fontSize: 16, paddingTop: 10, paddingLeft: 20}}>
-         {user.name}
+          Torsten Paulsson
         </Text>
         <Button
           style={{alignItems: 'center', justifyContent: 'center', paddingLeft: 45}}>
@@ -183,3 +180,7 @@ const Myinfo = () => {
 
 
 export default Myinfo;
+
+
+
+

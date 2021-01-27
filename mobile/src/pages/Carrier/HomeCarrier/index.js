@@ -6,6 +6,28 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import {Container} from './styles';
 // const [carrier, setCarrier] = useState([]);
 
+function getNearByDrivers(){
+	return(dispatch, store)=>{
+		api.get("/carrierLocation")
+		.query({
+			latitude:0,
+			longitude:0	
+		})
+		.finish((error, res)=>{
+			if(res){
+				dispatch({
+					type:GET_NEARBY_DRIVERS,
+					payload:res.body
+				});
+			}
+
+		});
+	};
+}
+
+
+
+
 const Home = () => {
   const navigation = useNavigation();
 
@@ -27,10 +49,8 @@ const Home = () => {
     type: 'TileLayer',  // the type of layer as shown at https://react-leaflet.js.org/docs/en/components.html#raster-layers
     baseLayer: true,
     // url of tiles
-    url: `https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapboxToken}`,
+    url: `https://api.tiles.mapbox.com/v4/mapbox.streets/39.9375346/115.837023/9.png?access_token=${mapboxToken}`,
     // attribution string to be shown for this layer
-    attribution:
-      '&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors'
   }
 
   return(
@@ -44,7 +64,7 @@ const Home = () => {
       // Optional: display a marker to be at a given location
       ownPositionMarker={{
         coords: this.state.currentLocation,
-        icon: "d'�",
+        icon: "d",
         size: [24, 24],
         animation: {
           name: "pulse",
@@ -67,4 +87,4 @@ export default Home;
 
 
 
-      source={{uri: 'https://webapi.amap.com/maps?v=1.4.15&key=000927566775458ccd649e88b6cd1290'}}
+      //source={{uri: 'https://webapi.amap.com/maps?v=1.4.15&key=000927566775458ccd649e88b6cd1290'}}

@@ -246,15 +246,13 @@ const Order = () => {
       <Container >
         <Title>Select Truck</Title>          
         <SwitchSelector
-          onPress={value => this.setState({ gender: value })}
+          onPress={value => this.setState(setTruckSize)}
           textColor={'#F2F2F2'} 
-          selectedColor={colors.white}
+          selectedColor={'grey'}
           buttonColor={'#66CC7D'}
           hasPadding
-          options={[
-            { label: "Feminino", value: "f", imageIcon: images.feminino }, //images.feminino = require('./path_to/assets/img/feminino.png')
-            { label: "Masculino", value: "m", imageIcon: images.masculino } //images.masculino = require('./path_to/assets/img/masculino.png')
-          ]}
+          options={truckSize[i]}>
+        </SwitchSelector>
             
   
           

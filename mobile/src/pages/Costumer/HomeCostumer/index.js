@@ -51,8 +51,6 @@ const Home = () => {
     // url of tiles
     url: `https://api.tiles.mapbox.com/v4/mapbox.streets/39.9375346/115.837023/9.png?access_token=${mapboxToken}`,
     // attribution string to be shown for this layer
-    attribution:
-      '&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors'
   }
 
   return(
