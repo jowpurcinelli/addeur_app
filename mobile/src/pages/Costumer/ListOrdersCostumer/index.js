@@ -35,7 +35,7 @@ const ListOrdersCostumer = ({item, index}) => {
     <ScrollView>
       <Container>
         <TruckIcon />
-  <Text>Booking ID {Order.id}</Text>
+        <Text>Booking ID {Order.id}</Text>
         <View style={{flexDirection: 'row', alignItems: 'right'}}>
           <Button appearance='outline'></Button>
 
