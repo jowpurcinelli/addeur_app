@@ -43,3 +43,31 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments.
 
 
+
+
+
+
+
+
+## Connecting to Server 
+
+The server was created using Nodejs as it is using the Huawei Cloud Services as a Host.
+
+To access the server from a remote computer, please follow the instructions:
+
+1 Install Docker
+2 Install Node
+3 Connect to the provided VPN and follow the scripts mentioned below.
+
+First of all, after installing Docker you'll need to connect it to the right port.
+For this you can use some tool like DBeaver or Postbird for better visualization and Experience.
+
+First, to connect the database, use
+`$ docker run -d -p 5432:5432 --name addeur -e POSTGRES_PASSWORD=addeur postgres`
+
+That's it, you're connected.
+Now we need to connect the server:
+It can be done directly from the Project Source Folder.
+From there, access the terminal and use:
+...
+
