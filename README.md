@@ -1,8 +1,10 @@
 # addeur_app
 Private project for a China-based startup striving for reducing truck's emissions, so we wish to have an app that enables truckers to find their cargo quickly and efficiently executing 'empty cargo'. Therefore, all APIs are from Chinese suppliers such as Huawei, Alibaba, and Tencent.
+<br />
 <img src="https://user-images.githubusercontent.com/53058735/171932175-f15bb881-0b5b-48b2-a441-60714e2275b6.jpg" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/53058735/171932186-2e377af4-e6d5-4caa-bf09-fb017fb207d9.jpg" width="200" height="400" />
+<br />
 <img src="https://user-images.githubusercontent.com/53058735/171932189-84b37662-9a84-4252-8b31-de57a3bb6824.jpg" width="200" height="800" />
+<br />
 <img src="https://user-images.githubusercontent.com/53058735/171932194-7b7fe4e7-c7af-47e9-8d88-63cae6274e14.jpg" width="200" height="800" />
 <img src="https://user-images.githubusercontent.com/53058735/171932200-9d32f89d-cbdb-4176-a151-cb1e0db4e737.jpg" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/53058735/171932203-c528d5cb-6098-40cc-acbb-d26afd7841e6.jpg" width="200" height="400" />
